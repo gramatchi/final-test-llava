@@ -1,0 +1,173 @@
+{
+  "n_total": 1000,
+  "n_unique_photos": 1000,
+  "entries_per_photo": 1,
+  "accuracy": 0.843,
+  "n_wrong": 157,
+  "wrong_by_hallucinated_count": {
+    "1": 143,
+    "2": 12,
+    "3": 2
+  },
+  "single_type_hallucination_n": 143,
+  "single_type_hallucination_by_type": {
+    "gamma": {
+      "count": 122,
+      "fraction": 0.8531468531468531
+    },
+    "noise": {
+      "count": 9,
+      "fraction": 0.06293706293706294
+    },
+    "jpeg": {
+      "count": 12,
+      "fraction": 0.08391608391608392
+    }
+  },
+  "claimed_severity_when_hallucinating": {
+    "jpeg": {
+      "n": 12,
+      "distribution": {
+        "0": 1,
+        "1": 9,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "mild_fraction": 0.8333333333333334
+    },
+    "noise": {
+      "n": 9,
+      "distribution": {
+        "0": 0,
+        "1": 7,
+        "2": 2,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "mild_fraction": 0.7777777777777778
+    },
+    "gamma": {
+      "n": 122,
+      "distribution": {
+        "0": 25,
+        "1": 77,
+        "2": 19,
+        "3": 1,
+        "4": 0
+      },
+      "mild_fraction": 0.8360655737704918
+    }
+  },
+  "brightness_check": {
+    "population_mean": 105.37063270623479,
+    "population_std": 32.571257430028616,
+    "n_flagged_photos": 135,
+    "mean_abs_zscore_flagged": 1.2011182493423727,
+    "mean_abs_zscore_all": 0.7945935628176625
+  },
+  "accuracy_by_question_phrasing": {
+    "Give me a diagnosis and a repair plan for this photo.": {
+      "n": 55,
+      "accuracy": 0.8
+    },
+    "Walk me through fixing this image.": {
+      "n": 47,
+      "accuracy": 0.8297872340425532
+    },
+    "Inspect this image for artifacts. List every issue found and the restoration pipeline to correct them.": {
+      "n": 47,
+      "accuracy": 0.8936170212765957
+    },
+    "This image may have more than one problem. Diagnose it and describe the fix, in order.": {
+      "n": 51,
+      "accuracy": 0.7843137254901961
+    },
+    "Evaluate this image for combined distortions and recommend a full restoration sequence.": {
+      "n": 51,
+      "accuracy": 0.9019607843137255
+    },
+    "Tell me what's damaged in this photo and how to restore it properly.": {
+      "n": 33,
+      "accuracy": 0.8484848484848485
+    },
+    "How would you clean this image up?": {
+      "n": 48,
+      "accuracy": 0.7708333333333334
+    },
+    "Diagnose this picture \u2014 could be one issue or several \u2014 and tell me the fix pipeline.": {
+      "n": 50,
+      "accuracy": 0.76
+    },
+    "Spot the issues here and tell me how to fix them, step by step.": {
+      "n": 56,
+      "accuracy": 0.8392857142857143
+    },
+    "Anything off with this pic? How do I fix it?": {
+      "n": 58,
+      "accuracy": 0.8448275862068966
+    },
+    "Check this photo for problems.": {
+      "n": 48,
+      "accuracy": 0.7708333333333334
+    },
+    "This photo looks degraded in more than one way \u2014 what's going on, and how do I fix all of it?": {
+      "n": 53,
+      "accuracy": 0.8301886792452831
+    },
+    "Determine which distortions affect this image and the correct order to restore it.": {
+      "n": 58,
+      "accuracy": 0.8620689655172413
+    },
+    "What's wrong with this photo?": {
+      "n": 58,
+      "accuracy": 0.896551724137931
+    },
+    "Assess this image for degradation and lay out the restoration steps in order.": {
+      "n": 57,
+      "accuracy": 0.9122807017543859
+    },
+    "Is this photo degraded? If so, how many ways, and what's the fix?": {
+      "n": 41,
+      "accuracy": 0.9024390243902439
+    },
+    "Analyze this image. Identify any distortions present and give a step-by-step restoration plan.": {
+      "n": 49,
+      "accuracy": 0.7959183673469388
+    },
+    "What's wrong with this photo, and in what order should I fix it?": {
+      "n": 41,
+      "accuracy": 0.8292682926829268
+    },
+    "Identify all distortions present and propose an ordered restoration pipeline.": {
+      "n": 44,
+      "accuracy": 0.8863636363636364
+    },
+    "Fix this image.": {
+      "n": 55,
+      "accuracy": 0.8909090909090909
+    }
+  },
+  "lenient_accuracy": {
+    "sev<=0": 0.869,
+    "sev<=1": 0.962
+  },
+  "ssim_impact_false_positive_fix": {
+    "n": 143,
+    "n_skipped": 0,
+    "mean_ssim_loss": 0.1803555641980739,
+    "median_ssim_loss": 0.15430955613614872,
+    "max_ssim_loss": 0.6831418997728855
+  },
+  "n_flagged_examples": 157
+}

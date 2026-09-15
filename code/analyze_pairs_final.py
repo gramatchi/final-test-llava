@@ -1,0 +1,552 @@
+"""Stats for the pairs category (n=2, exactly two distortions present).
+
+Order accuracy/bias, confusion between the 3 pair-subsets, over-detection
+(hallucinating a phantom 3rd type), and cross-type interference (does one
+present type's severity make the other harder to detect).
+
+The SSIM section is the expensive part (two corrupt+restore steps per
+example) -- run via sbatch rather than interactively. Set SKIP_SSIM=1 to
+skip it for a fast pass over everything else.
+
+Outputs: pairs_stats.json, pairs_report.md, pairs_flagged_examples.json.
+"""
+import json
+import re
+import os
+import random
+import sys
+import collections
+import statistics
+
+import cv2
+from skimage.metrics import structural_similarity as ssim
+
+_REPO = "/nfsd/lttm4/tesisti/gramatchi"
+sys.path.insert(0, os.path.join(_REPO, "v6"))
+from severity_levels import JPEG_QUALITY, NOISE_SIGMA, GAMMA
+from methods_jpeg import METHODS as JPEG_METHODS
+from methods_noise import METHODS as NOISE_METHODS
+from methods_gamma import METHODS as GAMMA_METHODS
+
+sys.path.insert(0, _REPO)
+from corruptors import add_jpeg_compression, add_gaussian_noise, add_gamma_corruption
+
+ANSWERS_PATH = os.path.join(_REPO, "final_test/eval_results/final_test_pipeline_answers.jsonl")
+TEST_MANIFEST_PATH = os.path.join(_REPO, "final_test/dataset/llava_final_test.json")
+RAW_DIR = "/home/gramatchin/data/raw"
+OUT_DIR = os.path.join(_REPO, "final_test/stats/results")
+os.makedirs(OUT_DIR, exist_ok=True)
+
+MILD_THRESHOLD = 1
+SKIP_SSIM = os.environ.get("SKIP_SSIM", "0") == "1"
+
+JPEG_ORDER = sorted(JPEG_QUALITY, reverse=True)
+NOISE_ORDER = sorted(NOISE_SIGMA)
+METHOD_FN = {
+    "jpeg": {name: fn for name, fn in JPEG_METHODS},
+    "noise": {name: fn for name, fn in NOISE_METHODS},
+    "gamma": {name: fn for name, fn in GAMMA_METHODS},
+}
+CORRUPT_FN = {
+    "jpeg": lambda img, v: add_jpeg_compression(img, quality=v)[0],
+    "noise": lambda img, v: add_gaussian_noise(img, sigma=v)[0],
+    "gamma": lambda img, v: add_gamma_corruption(img, gamma=v)[0],
+}
+
+
+def gamma_idx(g):
+    # darkening/brightening are mirror-image 5-value ladders; convert a
+    # brightening ratio to its dark-side equivalent so both compare fairly,
+    # then find the closest rung. Direction doesn't matter, only magnitude.
+    darks = sorted(x for x in GAMMA if x > 1.0)
+    brights = sorted((1.0 / x for x in GAMMA if x < 1.0))
+    side = darks if g > 1.0 else brights
+    ratio = g if g > 1.0 else 1.0 / g
+    return min(range(len(side)), key=lambda i: abs(side[i] - ratio))
+
+
+def sev_idx(t, v):
+    # converts a raw param into a common 0=mildest..N=strongest position so
+    # jpeg/noise/gamma can be compared fairly
+    if t == "jpeg":
+        return min(range(len(JPEG_ORDER)), key=lambda i: abs(JPEG_ORDER[i] - v))
+    if t == "noise":
+        return min(range(len(NOISE_ORDER)), key=lambda i: abs(NOISE_ORDER[i] - v))
+    if t == "gamma":
+        return gamma_idx(v)
+    raise ValueError(t)
+
+
+_GAMMA_BUCKET_RNG = random.Random(0)  # seeded so reruns are reproducible
+
+
+def gamma_to_10scale(i):
+    # spreads gamma's 5 levels evenly across a 0-9 scale for cross-type
+    # comparisons: level i lands on bucket 2i or 2i+1, chosen 50/50. A plain
+    # linear stretch (i * 9/4, rounded) leaves several buckets unreachable
+    # by gamma, which silently biases any max()-combination toward jpeg/noise.
+    return 2 * i + _GAMMA_BUCKET_RNG.randint(0, 1)
+
+
+QUALITY_RE = re.compile(r"quality\D{0,10}?(\d+)", re.IGNORECASE)
+SIGMA_RE = re.compile(r"sigma\D{0,10}?([0-9]*\.?[0-9]+)", re.IGNORECASE)
+GAMMA_RE = re.compile(r"gamma\D{0,5}?([0-9]*\.?[0-9]+)", re.IGNORECASE)
+VALUE_RE = {"jpeg": QUALITY_RE, "noise": SIGMA_RE, "gamma": GAMMA_RE}
+
+
+def claimed_value(output, t):
+    # pred_value is only set for true types, so for a hallucinated type we
+    # have to pull whatever number the model mentioned out of the raw text
+    m = VALUE_RE[t].search(output)
+    if not m:
+        return None
+    try:
+        return float(m.group(1))
+    except ValueError:
+        return None
+
+
+def rate(lst):
+    return sum(lst) / len(lst) if lst else None
+
+
+def _ssim(a, b):
+    return float(ssim(a, b, data_range=255, channel_axis=2 if a.ndim == 3 else None))
+
+
+def apply_pipeline(img, order, values_by_type, methods_by_type):
+    # used for both the ground-truth ceiling restoration and for replaying
+    # the model's own claimed pipeline -- same function, different args
+    cur = img
+    for t in order:
+        fn = METHOD_FN[t][methods_by_type[t]]
+        cur = fn(cur, values_by_type[t])
+    return cur
+
+
+def corrupt_sequence(img, order, values_by_type):
+    cur = img
+    for t in order:
+        cur = CORRUPT_FN[t](cur, values_by_type[t])
+    return cur
+
+
+def main():
+    rows = [json.loads(l) for l in open(ANSWERS_PATH)]
+    n2 = [r for r in rows if len(r["true_types"]) == 2]
+
+    test_manifest = json.load(open(TEST_MANIFEST_PATH))
+    base_to_image = {e["base_id"]: e["image"] for e in test_manifest}
+
+    stats = {}
+    report = []
+
+    def w(line=""):
+        report.append(line)
+
+    w("# n=2 (exactly two distortions present)")
+    w()
+
+    # ---- 1. overview ----
+    by_photo_all = collections.defaultdict(list)
+    for r in n2:
+        base = r["id"].split("_final_")[0]
+        by_photo_all[base].append(r)
+    stats["n_total"] = len(n2)
+    stats["n_unique_photos"] = len(by_photo_all)
+    w("## 1. Overview")
+    w(f"- total examples: {len(n2)}")
+    w(f"- unique photos: {len(by_photo_all)}")
+    w()
+
+    # ---- 2. confusion by subset ----
+    w("## 2. Type-set accuracy and confusion by pair-subset")
+    by_true = collections.defaultdict(collections.Counter)
+    for r in n2:
+        by_true[tuple(sorted(r["true_types"]))][tuple(sorted(r["pred_types"]))] += 1
+    subset_acc = {}
+    for true_combo, preds in sorted(by_true.items()):
+        total = sum(preds.values())
+        correct = preds.get(true_combo, 0)
+        subset_acc["+".join(true_combo)] = {"n": total, "accuracy": correct / total}
+        w(f"- true={'+'.join(true_combo)} (n={total}, acc={correct/total:.3f}):")
+        for pred_combo, cnt in preds.most_common(4):
+            if pred_combo != true_combo:
+                w(f"    -> {'+'.join(pred_combo) if pred_combo else '(nothing)'}: {cnt} ({100*cnt/total:.1f}%)")
+    stats["subset_accuracy"] = subset_acc
+    w()
+
+    # ---- 3. order accuracy + bias ----
+    w("## 3. Order accuracy and predicted-order bias")
+    type_correct = [r for r in n2 if r["type_set_correct"]]
+    order_acc = rate([r["order_correct"] for r in type_correct])
+    stats["order_accuracy_given_type_correct"] = order_acc
+    w(f"- order_accuracy_given_type_correct: {order_acc:.3f} (n={len(type_correct)})")
+    true_dist = collections.Counter(tuple(r["true_order"]) for r in type_correct)
+    pred_dist = collections.Counter(tuple(r["pred_order"]) for r in type_correct)
+    all_orders = sorted(set(true_dist) | set(pred_dist), key=lambda o: -pred_dist.get(o, 0))
+    order_bias = {}
+    for o in all_orders:
+        key = "->".join(o)
+        order_bias[key] = {"true_pct": 100 * true_dist.get(o, 0) / len(type_correct),
+                            "pred_pct": 100 * pred_dist.get(o, 0) / len(type_correct)}
+        w(f"  {key}: true={order_bias[key]['true_pct']:.1f}%  pred={order_bias[key]['pred_pct']:.1f}%")
+    stats["order_bias"] = order_bias
+    w()
+
+    # ---- 4. error breakdown ----
+    w("## 4. Error breakdown")
+    wrong = [r for r in n2 if not r["type_set_correct"]]
+    dropped_one = [r for r in wrong if len(set(r["true_types"]) & set(r["pred_types"])) == 1 and len(r["pred_types"]) <= 2]
+    dropped_both = [r for r in wrong if len(set(r["true_types"]) & set(r["pred_types"])) == 0]
+    over_detected = [r for r in wrong if set(r["true_types"]).issubset(set(r["pred_types"])) and len(r["pred_types"]) > 2]
+    stats["n_wrong"] = len(wrong)
+    stats["dropped_one_type"] = len(dropped_one)
+    stats["dropped_both_types"] = len(dropped_both)
+    stats["over_detected_third_type"] = len(over_detected)
+    w(f"- wrong: {len(wrong)}/{len(n2)} ({100*len(wrong)/len(n2):.1f}%)")
+    w(f"  - dropped exactly one of the two true types: {len(dropped_one)} ({100*len(dropped_one)/len(wrong):.1f}%)")
+    w(f"  - dropped both true types entirely: {len(dropped_both)} ({100*len(dropped_both)/len(wrong):.1f}%)")
+    w(f"  - found both true types but ALSO hallucinated a 3rd: {len(over_detected)} ({100*len(over_detected)/len(wrong):.1f}%)")
+    w()
+
+    # ---- 5. over-detection rate by severity of the two present types ----
+    w("## 5. Over-detection (phantom 3rd type) rate by severity of the present distortions")
+    w("(max severity of the two present types, both put on the same 0-9 scale -- gamma's 0-4")
+    w("index is spread evenly across the range via gamma_to_10scale() rather than linearly")
+    w("stretched, so it can land on any of the 10 buckets, not just {0,2,4,7,9})")
+    by_max_sev = collections.defaultdict(list)
+    for r in n2:
+        idxs = [sev_idx(t, r["steps"][t]["true_value"]) for t in r["true_types"]]
+        norm_idxs = [gamma_to_10scale(i) if t == "gamma" else i for t, i in zip(r["true_types"], idxs)]
+        max_bucket = max(norm_idxs)
+        by_max_sev[max_bucket].append(len(r["pred_types"]) > 2)
+    over_by_sev = {str(k): {"rate": rate(v), "n": len(v)} for k, v in sorted(by_max_sev.items())}
+    stats["over_detection_by_max_severity"] = over_by_sev
+    for k in sorted(by_max_sev):
+        v = by_max_sev[k]
+        w(f"  max_sev_bucket={k}: over-detection rate={rate(v):.3f} (n={len(v)})")
+    w()
+
+    # ---- 6. cross-type interference: recall of A vs severity of B ----
+    w("## 6. Cross-type interference (recall of type A vs the OTHER present type's severity)")
+    interference = {}
+    for target in ["jpeg", "noise", "gamma"]:
+        sub = [r for r in n2 if target in r["true_types"]]
+        if not sub:
+            continue
+        by_other_sev = collections.defaultdict(list)
+        for r in sub:
+            other = [t for t in r["true_types"] if t != target][0]
+            oi = sev_idx(other, r["steps"][other]["true_value"])
+            norm = round(oi * (9 / 4)) if other == "gamma" else oi
+            bucket = "mild" if norm <= 3 else ("mid" if norm <= 6 else "strong")
+            by_other_sev[bucket].append(target in r["pred_types"])
+        interference[target] = {b: {"recall": rate(v), "n": len(v)} for b, v in by_other_sev.items()}
+        w(f"- recall of {target}, by co-occurring type's severity:")
+        for b in ["mild", "mid", "strong"]:
+            if b in by_other_sev:
+                w(f"    other type is {b}: recall={rate(by_other_sev[b]):.3f} (n={len(by_other_sev[b])})")
+    stats["cross_type_interference"] = interference
+    w()
+
+    # ---- 7. recall/value_accuracy by own severity ----
+    w("## 7. Recall and value_accuracy by own severity level (0=mildest)")
+    for t in ["jpeg", "noise", "gamma"]:
+        sub = [r for r in n2 if t in r["true_types"]]
+        by_sev_recall = collections.defaultdict(list)
+        by_sev_value = collections.defaultdict(list)
+        for r in sub:
+            idx = sev_idx(t, r["steps"][t]["true_value"])
+            by_sev_recall[idx].append(t in r["pred_types"])
+            by_sev_value[idx].append(r["steps"][t]["value_correct"])
+        w(f"- {t}:")
+        max_idx = 5 if t == "gamma" else 10
+        for i in range(max_idx):
+            if i in by_sev_recall:
+                w(f"    idx={i}: recall={rate(by_sev_recall[i]):.3f}, value_acc={rate(by_sev_value[i]):.3f} (n={len(by_sev_recall[i])})")
+    w()
+
+    # ---- 8. method accuracy ----
+    w("## 8. Method accuracy per type")
+    method_stats = {}
+    for t in ["jpeg", "noise", "gamma"]:
+        sub = [r for r in n2 if t in r["steps"]]
+        ma = rate([r["steps"][t]["method_correct"] for r in sub])
+        mfa = rate([r["steps"][t]["method_family_correct"] for r in sub])
+        method_stats[t] = {"n": len(sub), "method_accuracy": ma, "method_family_accuracy": mfa}
+        w(f"- {t}: method_accuracy={ma:.3f}, method_family_accuracy={mfa:.3f} (n={len(sub)})")
+    stats["method_accuracy"] = method_stats
+    w()
+
+    w("### 8b. Method accuracy GIVEN type-set AND order are both already correct")
+    w("(the full-pipeline-correct endpoint: once the diagnosis and sequencing are right,")
+    w("how good is the actual restoration method choice?)")
+    both_correct = [r for r in n2 if r["type_set_correct"] and r["order_correct"]]
+    w(f"- n with both type+order correct: {len(both_correct)}/{len(n2)} ({100*len(both_correct)/len(n2):.1f}%)")
+    method_given_correct = {}
+    for t in ["jpeg", "noise", "gamma"]:
+        sub = [r for r in both_correct if t in r["steps"]]
+        ma = rate([r["steps"][t]["method_correct"] for r in sub])
+        mfa = rate([r["steps"][t]["method_family_correct"] for r in sub])
+        method_given_correct[t] = {"n": len(sub), "method_accuracy": ma, "method_family_accuracy": mfa}
+        w(f"- {t}: method_accuracy={ma:.3f}, method_family_accuracy={mfa:.3f} (n={len(sub)})")
+    stats["method_accuracy_given_type_and_order_correct"] = method_given_correct
+    w()
+
+    # ---- 9. value accuracy: unified severity-index definition ----
+    w("## 9. Value accuracy (unified severity-index definition -- exact index match, or within one adjacent level)")
+    value_stats = {}
+    for t in ["jpeg", "noise", "gamma"]:
+        sub = [r for r in n2 if t in r["steps"]]
+        exact = rate([r["steps"][t]["value_correct"] for r in sub])
+        within1 = rate([r["steps"][t]["value_correct_within1"] for r in sub])
+        value_stats[t] = {"n": len(sub), "exact_fraction": exact, "within1_fraction": within1}
+        w(f"- {t}: exact={exact:.3f}, within-1-level={within1:.3f} (n={len(sub)})")
+    stats["value_accuracy"] = value_stats
+    w()
+
+    # ---- 9b. within-1/within-2 value accuracy: strict miss vs graduated miss ----
+    w("## 9b. Within-1 / within-2 value accuracy: strict miss vs graduated miss")
+    w("(strict: a missed detection is always counted wrong, regardless of true severity --")
+    w("same numbers as section 9. graduated: a missed detection is treated as an implicit")
+    w("\"index -1\" guess, one step milder than the mildest real level.)")
+    graduated_stats = {}
+    for t in ["jpeg", "noise", "gamma"]:
+        sub = [r for r in n2 if t in r["steps"]]
+        n = len(sub)
+        exact = rate([r["steps"][t]["value_correct"] for r in sub])
+        w1_strict = w2_strict = w1_grad = w2_grad = 0
+        for r in sub:
+            pv = r["steps"][t]["pred_value"]
+            true_idx = sev_idx(t, r["steps"][t]["true_value"])
+            if pv is not None:
+                d = abs(true_idx - sev_idx(t, pv))
+                w1_strict += d <= 1
+                w2_strict += d <= 2
+            pred_idx_g = -1 if pv is None else sev_idx(t, pv)
+            d_g = abs(true_idx - pred_idx_g)
+            w1_grad += d_g <= 1
+            w2_grad += d_g <= 2
+        graduated_stats[t] = {
+            "n": n, "exact_fraction": exact,
+            "within1_strict": w1_strict / n, "within1_graduated": w1_grad / n,
+            "within2_strict": w2_strict / n, "within2_graduated": w2_grad / n,
+        }
+        w(f"- {t}: exact={exact:.3f}  "
+          f"within1(strict/graduated)={w1_strict/n:.3f}/{w1_grad/n:.3f}  "
+          f"within2(strict/graduated)={w2_strict/n:.3f}/{w2_grad/n:.3f}  (n={n})")
+    stats["value_accuracy_graduated_miss"] = graduated_stats
+    w()
+
+    # ---- 9c. value accuracy excluding the weakest severity level(s) ----
+    w("## 9c. Value accuracy excluding the weakest severity level(s)")
+    w("(drops examples at/below the threshold entirely from both numerator and denominator --")
+    w("a missed detection is NOT reinterpreted as a mild-level guess, it is simply excluded")
+    w("here if its true severity is at/below the threshold)")
+    excl_value_stats = {}
+    for t in ["jpeg", "noise", "gamma"]:
+        sub_all = [r for r in n2 if t in r["steps"]]
+        excl_value_stats[t] = {}
+        w(f"- {t}:")
+        exact_all = rate([r["steps"][t]["value_correct"] for r in sub_all])
+        within1_all = rate([r["steps"][t]["value_correct_within1"] for r in sub_all])
+        w(f"    all severities: exact={exact_all:.3f}, within-1-level={within1_all:.3f} (n={len(sub_all)})")
+        excl_value_stats[t]["all"] = {"n": len(sub_all), "exact_fraction": exact_all, "within1_fraction": within1_all}
+        for thresh in [0, 1]:
+            sub = [r for r in sub_all if sev_idx(t, r["steps"][t]["true_value"]) > thresh]
+            exact = rate([r["steps"][t]["value_correct"] for r in sub])
+            within1 = rate([r["steps"][t]["value_correct_within1"] for r in sub])
+            w(f"    excl sev<={thresh}: exact={exact:.3f}, within-1-level={within1:.3f} (n={len(sub)})")
+            excl_value_stats[t][f"excl_sev<={thresh}"] = {"n": len(sub), "exact_fraction": exact, "within1_fraction": within1}
+    stats["value_accuracy_excluding_weak_severity"] = excl_value_stats
+    w()
+
+    # ---- 10. lenient type_set_accuracy ----
+    w("## 10. Lenient type_set_accuracy (forgive ONE mild add/drop)")
+
+    def lenient_correct(r, mild_thresh):
+        # forgives either an extra 3rd type at mild claimed severity, or one
+        # of the two true types dropped when its true severity was mild
+        true_t, pred_t = set(r["true_types"]), set(r["pred_types"])
+        if true_t == pred_t:
+            return True
+        sym_diff = true_t.symmetric_difference(pred_t)
+        if len(sym_diff) != 1:
+            return False
+        t = next(iter(sym_diff))
+        if t in pred_t and t not in true_t:
+            v = claimed_value(r["output"], t)
+            return v is not None and sev_idx(t, v) <= mild_thresh
+        if t in true_t and t not in pred_t:
+            return sev_idx(t, r["steps"][t]["true_value"]) <= mild_thresh
+        return False
+
+    strict_acc = rate([r["type_set_correct"] for r in n2])
+    lenient_stats = {}
+    for thresh, label in [(0, "sev<=0"), (1, "sev<=1")]:
+        la = rate([lenient_correct(r, thresh) for r in n2])
+        lenient_stats[label] = la
+        w(f"- strict={strict_acc:.3f} -> lenient ({label})={la:.3f}")
+    stats["strict_type_set_accuracy"] = strict_acc
+    stats["lenient_type_set_accuracy"] = lenient_stats
+    w()
+
+    # ---- 11. method memorization ----
+    w("## 11. Method memorization check")
+    memorization = {}
+    for t in ["jpeg", "noise"]:
+        sub = [r for r in n2 if t in r["steps"]]
+        true_c = collections.Counter(r["steps"][t]["true_method"] for r in sub)
+        pred_c = collections.Counter(r["steps"][t]["pred_method"] for r in sub)
+        n = len(sub)
+        methods = sorted(set(true_c) | set(pred_c), key=lambda m: -pred_c.get(m, 0))
+        memorization[t] = {m: {"true_pct": 100*true_c.get(m,0)/n, "pred_pct": 100*pred_c.get(m,0)/n} for m in methods}
+        w(f"- {t}:")
+        for m in methods:
+            tp, pp = memorization[t][m]["true_pct"], memorization[t][m]["pred_pct"]
+            flag = " <- over-used" if pp - tp > 5 else ""
+            w(f"    {m}: true={tp:.1f}%  pred={pp:.1f}%{flag}")
+    stats["method_memorization"] = memorization
+    w()
+
+    # ---- 12. excluding mild severity levels ----
+    w("## 12. Effect of excluding the weakest severity level(s)")
+    w("(excluded if EITHER present type is at or below the threshold)")
+    for thresh, label in [(None, "all severities"), (0, "excl sev<=0"), (1, "excl sev<=1")]:
+        if thresh is None:
+            sub = n2
+        else:
+            sub = [r for r in n2 if all(sev_idx(t, r["steps"][t]["true_value"]) > thresh for t in r["true_types"])]
+        tsa = rate([r["type_set_correct"] for r in sub])
+        tc = [r for r in sub if r["type_set_correct"]]
+        oga = rate([r["order_correct"] for r in tc]) if tc else None
+        w(f"- {label}: n={len(sub)}, type_set_accuracy={tsa:.3f}" + (f", order_given_type={oga:.3f}" if oga is not None else ""))
+    w()
+
+    # ---- 13. SSIM impact (expensive -- restricted to type_set_correct examples) ----
+    w("## 13. SSIM impact of prediction errors (restricted to type-set-correct examples,")
+    w("so predicted and true steps correspond 1:1 -- only order/method/value can differ)")
+    w("Ceiling = our own dataset's ground-truth pipeline (reverse of true corruption order,")
+    w("reused single-distortion-optimal method) -- NOT a proven true optimum for combos:")
+    w("reused methods match the real combo-optimum only ~29% of the time.")
+    if SKIP_SSIM:
+        w("(SKIPPED -- SKIP_SSIM=1)")
+        stats["ssim_impact"] = "skipped"
+    else:
+        deltas = []
+        n_skipped = 0
+        tc_rows = [r for r in n2 if r["type_set_correct"]]
+        for i, r in enumerate(tc_rows):
+            base = r["id"].split("_final_")[0]
+            img_rel = base_to_image.get(base)
+            if img_rel is None:
+                n_skipped += 1
+                continue
+            true_values = {t: r["steps"][t]["true_value"] for t in r["true_types"]}
+            true_methods = {t: r["steps"][t]["true_method"] for t in r["true_types"]}
+            pred_methods = {t: r["steps"][t]["pred_method"] for t in r["true_types"]}
+            pred_values = {t: r["steps"][t]["pred_value"] for t in r["true_types"]}
+            if any(pred_methods[t] not in METHOD_FN[t] or pred_values[t] is None for t in r["true_types"]):
+                n_skipped += 1
+                continue
+            img = cv2.imread(os.path.join(RAW_DIR, img_rel))
+            if img is None:
+                n_skipped += 1
+                continue
+            # true_order is actually the restore order, so corruption order is its reverse
+            corruption_order = list(reversed(r["true_order"]))
+            corrupted = corrupt_sequence(img, corruption_order, true_values)
+            # ground-truth ceiling: restore in TRUE order with TRUE method/value
+            gt_restored = apply_pipeline(corrupted, r["true_order"], true_values, true_methods)
+            ceiling_ssim = _ssim(img, gt_restored)
+            try:
+                pred_restored = apply_pipeline(corrupted, r["pred_order"], pred_values, pred_methods)
+                achieved_ssim = _ssim(img, pred_restored)
+            except Exception:
+                n_skipped += 1
+                continue
+            deltas.append(ceiling_ssim - achieved_ssim)
+            if (i + 1) % 100 == 0:
+                print(f"  ssim progress: {i+1}/{len(tc_rows)}", flush=True)
+        stats["ssim_impact"] = {
+            "n_compared": len(deltas), "n_skipped": n_skipped,
+            "mean_ssim_loss": statistics.mean(deltas) if deltas else None,
+            "median_ssim_loss": statistics.median(deltas) if deltas else None,
+            "fraction_negligible_loss_lt_0.01": sum(1 for d in deltas if d < 0.01)/len(deltas) if deltas else None,
+        }
+        w(f"- compared={len(deltas)}, skipped={n_skipped}")
+        if deltas:
+            w(f"    mean SSIM lost vs ceiling: {statistics.mean(deltas):.4f}")
+            w(f"    median SSIM lost vs ceiling: {statistics.median(deltas):.4f}")
+            w(f"    fraction with negligible loss (<0.01): {stats['ssim_impact']['fraction_negligible_loss_lt_0.01']:.3f}")
+    w()
+
+    # ---- 14. does accuracy depend on the question phrasing? ----
+    # Same check as singles/none, extended here to also track order_accuracy
+    # (given type_set_correct) per phrasing, since pairs adds a real
+    # sequencing question that singles doesn't have.
+    w("## 14. Does accuracy depend on the question phrasing?")
+    w("(~20 phrasings used at random, independent of the true distortions/order.")
+    w("NOTE: n per phrasing is small (~50) -- treat modest spread as noise.)")
+    id_to_question = {e["id"]: e["conversations"][0]["value"].replace("<image>", "").strip() for e in test_manifest}
+    by_question_type = collections.defaultdict(list)
+    by_question_order = collections.defaultdict(list)
+    for r in n2:
+        q = id_to_question.get(r["id"], "(unknown)")
+        by_question_type[q].append(r["type_set_correct"])
+        if r["type_set_correct"]:
+            by_question_order[q].append(r["order_correct"])
+    q_stats = {}
+    for q in by_question_type:
+        q_stats[q] = {
+            "n": len(by_question_type[q]),
+            "type_set_accuracy": rate(by_question_type[q]),
+            "order_accuracy_given_type_correct": rate(by_question_order.get(q, [])),
+        }
+    tsa_vals = [s["type_set_accuracy"] for s in q_stats.values()]
+    w(f"- {len(q_stats)} distinct phrasings seen, ~{len(n2)//len(q_stats)} examples each on average")
+    if len(tsa_vals) > 1:
+        w(f"- type_set_accuracy across phrasings: min={min(tsa_vals):.3f}, max={max(tsa_vals):.3f}, "
+          f"spread={max(tsa_vals)-min(tsa_vals):.3f}, stdev={statistics.stdev(tsa_vals):.3f}")
+    w("- per-phrasing breakdown, worst to best (by type_set_accuracy):")
+    for q, s in sorted(q_stats.items(), key=lambda kv: kv[1]["type_set_accuracy"]):
+        short_q = q if len(q) <= 60 else q[:57] + "..."
+        oga = s["order_accuracy_given_type_correct"]
+        oga_str = f"{oga:.3f}" if oga is not None else "n/a"
+        w(f"    type_set_acc={s['type_set_accuracy']:.3f}  order_given_type={oga_str}  (n={s['n']}): \"{short_q}\"")
+    stats["accuracy_by_question_phrasing"] = q_stats
+    w()
+
+    # ---- 15. flagged examples ----
+    flagged = []
+    for r in wrong:
+        base = r["id"].split("_final_")[0]
+        img_rel = base_to_image.get(base)
+        flagged.append({
+            "id": r["id"], "base_id": base,
+            "image_path": os.path.join(RAW_DIR, img_rel) if img_rel else None,
+            "image_path_relative": img_rel,
+            "true_types": r["true_types"], "pred_types": r["pred_types"],
+            "true_order": r["true_order"], "pred_order": r["pred_order"],
+            "output": r["output"],
+        })
+    stats["n_flagged_examples"] = len(flagged)
+    w("## 15. Flagged examples")
+    w(f"- {len(flagged)} wrong examples saved -> pairs_flagged_examples.json")
+
+    with open(os.path.join(OUT_DIR, "pairs_stats.json"), "w") as f:
+        json.dump(stats, f, indent=2)
+    with open(os.path.join(OUT_DIR, "pairs_report.md"), "w") as f:
+        f.write("\n".join(report))
+    with open(os.path.join(OUT_DIR, "pairs_flagged_examples.json"), "w") as f:
+        json.dump(flagged, f, indent=2)
+
+    print("\n".join(report))
+    print(f"\nSaved -> {OUT_DIR}/pairs_stats.json")
+    print(f"Saved -> {OUT_DIR}/pairs_report.md")
+    print(f"Saved -> {OUT_DIR}/pairs_flagged_examples.json")
+
+
+if __name__ == "__main__":
+    main()

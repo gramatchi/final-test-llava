@@ -1,0 +1,466 @@
+{
+  "n_total": 1000,
+  "n_unique_photos": 1000,
+  "subset_accuracy": {
+    "gamma+jpeg": {
+      "n": 366,
+      "accuracy": 0.5081967213114754
+    },
+    "gamma+noise": {
+      "n": 341,
+      "accuracy": 0.4046920821114369
+    },
+    "jpeg+noise": {
+      "n": 293,
+      "accuracy": 0.3515358361774744
+    }
+  },
+  "order_accuracy_given_type_correct": 0.8009367681498829,
+  "order_bias": {
+    "gamma->jpeg": {
+      "true_pct": 23.88758782201405,
+      "pred_pct": 22.24824355971897
+    },
+    "jpeg->gamma": {
+      "true_pct": 19.672131147540984,
+      "pred_pct": 21.311475409836067
+    },
+    "gamma->noise": {
+      "true_pct": 17.330210772833723,
+      "pred_pct": 19.20374707259953
+    },
+    "noise->gamma": {
+      "true_pct": 14.988290398126464,
+      "pred_pct": 13.114754098360656
+    },
+    "jpeg->noise": {
+      "true_pct": 13.114754098360656,
+      "pred_pct": 12.646370023419204
+    },
+    "noise->jpeg": {
+      "true_pct": 11.007025761124122,
+      "pred_pct": 11.475409836065573
+    }
+  },
+  "n_wrong": 573,
+  "dropped_one_type": 370,
+  "dropped_both_types": 26,
+  "over_detected_third_type": 177,
+  "over_detection_by_max_severity": {
+    "0": {
+      "rate": 0.0,
+      "n": 13
+    },
+    "1": {
+      "rate": 0.02857142857142857,
+      "n": 35
+    },
+    "2": {
+      "rate": 0.08771929824561403,
+      "n": 57
+    },
+    "3": {
+      "rate": 0.11538461538461539,
+      "n": 78
+    },
+    "4": {
+      "rate": 0.08791208791208792,
+      "n": 91
+    },
+    "5": {
+      "rate": 0.16379310344827586,
+      "n": 116
+    },
+    "6": {
+      "rate": 0.20833333333333334,
+      "n": 120
+    },
+    "7": {
+      "rate": 0.14814814814814814,
+      "n": 135
+    },
+    "8": {
+      "rate": 0.2459016393442623,
+      "n": 183
+    },
+    "9": {
+      "rate": 0.2616279069767442,
+      "n": 172
+    }
+  },
+  "cross_type_interference": {
+    "jpeg": {
+      "mild": {
+        "recall": 0.8599221789883269,
+        "n": 257
+      },
+      "strong": {
+        "recall": 0.7215189873417721,
+        "n": 237
+      },
+      "mid": {
+        "recall": 0.7696969696969697,
+        "n": 165
+      }
+    },
+    "noise": {
+      "mild": {
+        "recall": 0.8560885608856088,
+        "n": 271
+      },
+      "strong": {
+        "recall": 0.7641509433962265,
+        "n": 212
+      },
+      "mid": {
+        "recall": 0.7814569536423841,
+        "n": 151
+      }
+    },
+    "gamma": {
+      "mild": {
+        "recall": 0.7718120805369127,
+        "n": 298
+      },
+      "strong": {
+        "recall": 0.812807881773399,
+        "n": 203
+      },
+      "mid": {
+        "recall": 0.7378640776699029,
+        "n": 206
+      }
+    }
+  },
+  "method_accuracy": {
+    "jpeg": {
+      "n": 659,
+      "method_accuracy": 0.48406676783004554,
+      "method_family_accuracy": 0.6737481031866465
+    },
+    "noise": {
+      "n": 634,
+      "method_accuracy": 0.49053627760252366,
+      "method_family_accuracy": 0.6214511041009464
+    },
+    "gamma": {
+      "n": 707,
+      "method_accuracy": 0.7736916548797736,
+      "method_family_accuracy": 0.7736916548797736
+    }
+  },
+  "method_accuracy_given_type_and_order_correct": {
+    "jpeg": {
+      "n": 254,
+      "method_accuracy": 0.6062992125984252,
+      "method_family_accuracy": 0.84251968503937
+    },
+    "noise": {
+      "n": 181,
+      "method_accuracy": 0.6298342541436464,
+      "method_family_accuracy": 0.7900552486187845
+    },
+    "gamma": {
+      "n": 249,
+      "method_accuracy": 1.0,
+      "method_family_accuracy": 1.0
+    }
+  },
+  "value_accuracy": {
+    "jpeg": {
+      "n": 659,
+      "exact_fraction": 0.511380880121396,
+      "within1_fraction": 0.7268588770864947
+    },
+    "noise": {
+      "n": 634,
+      "exact_fraction": 0.4037854889589905,
+      "within1_fraction": 0.7555205047318612
+    },
+    "gamma": {
+      "n": 707,
+      "exact_fraction": 0.3578500707213578,
+      "within1_fraction": 0.6916548797736917
+    }
+  },
+  "value_accuracy_graduated_miss": {
+    "jpeg": {
+      "n": 659,
+      "exact_fraction": 0.511380880121396,
+      "within1_strict": 0.7268588770864947,
+      "within1_graduated": 0.8179059180576631,
+      "within2_strict": 0.7663125948406677,
+      "within2_graduated": 0.91350531107739
+    },
+    "noise": {
+      "n": 634,
+      "exact_fraction": 0.4037854889589905,
+      "within1_strict": 0.7555205047318612,
+      "within1_graduated": 0.8564668769716088,
+      "within2_strict": 0.805993690851735,
+      "within2_graduated": 0.9621451104100947
+    },
+    "gamma": {
+      "n": 707,
+      "exact_fraction": 0.3578500707213578,
+      "within1_strict": 0.6916548797736917,
+      "within1_graduated": 0.8345120226308345,
+      "within2_strict": 0.7652050919377652,
+      "within2_graduated": 0.9603960396039604
+    }
+  },
+  "value_accuracy_excluding_weak_severity": {
+    "jpeg": {
+      "all": {
+        "n": 659,
+        "exact_fraction": 0.511380880121396,
+        "within1_fraction": 0.7268588770864947
+      },
+      "excl_sev<=0": {
+        "n": 581,
+        "exact_fraction": 0.576592082616179,
+        "within1_fraction": 0.802065404475043
+      },
+      "excl_sev<=1": {
+        "n": 506,
+        "exact_fraction": 0.6067193675889329,
+        "within1_fraction": 0.8517786561264822
+      }
+    },
+    "noise": {
+      "all": {
+        "n": 634,
+        "exact_fraction": 0.4037854889589905,
+        "within1_fraction": 0.7555205047318612
+      },
+      "excl_sev<=0": {
+        "n": 569,
+        "exact_fraction": 0.44991212653778556,
+        "within1_fraction": 0.8400702987697716
+      },
+      "excl_sev<=1": {
+        "n": 505,
+        "exact_fraction": 0.47326732673267324,
+        "within1_fraction": 0.8910891089108911
+      }
+    },
+    "gamma": {
+      "all": {
+        "n": 707,
+        "exact_fraction": 0.3578500707213578,
+        "within1_fraction": 0.6916548797736917
+      },
+      "excl_sev<=0": {
+        "n": 560,
+        "exact_fraction": 0.43214285714285716,
+        "within1_fraction": 0.8089285714285714
+      },
+      "excl_sev<=1": {
+        "n": 426,
+        "exact_fraction": 0.4694835680751174,
+        "within1_fraction": 0.8544600938967136
+      }
+    }
+  },
+  "strict_type_set_accuracy": 0.427,
+  "lenient_type_set_accuracy": {
+    "sev<=0": 0.634,
+    "sev<=1": 0.789
+  },
+  "method_memorization": {
+    "jpeg": {
+      "bilateral_d3": {
+        "true_pct": 46.889226100151745,
+        "pred_pct": 43.095599393019725
+      },
+      "null": {
+        "true_pct": 0.0,
+        "pred_pct": 21.244309559939303
+      },
+      "bilateral_d5": {
+        "true_pct": 19.271623672230653,
+        "pred_pct": 17.905918057663126
+      },
+      "bilateral_d9": {
+        "true_pct": 21.699544764795146,
+        "pred_pct": 14.264036418816389
+      },
+      "nlm_tw5_sw11": {
+        "true_pct": 8.19423368740516,
+        "pred_pct": 3.338391502276176
+      },
+      "bndry_k3": {
+        "true_pct": 3.0349013657056148,
+        "pred_pct": 0.15174506828528073
+      },
+      "median_k3": {
+        "true_pct": 0.15174506828528073,
+        "pred_pct": 0.0
+      },
+      "gauss_0.2x": {
+        "true_pct": 0.7587253414264037,
+        "pred_pct": 0.0
+      }
+    },
+    "noise": {
+      "bilateral_d3": {
+        "true_pct": 46.37223974763407,
+        "pred_pct": 48.26498422712934
+      },
+      "null": {
+        "true_pct": 0.0,
+        "pred_pct": 19.242902208201894
+      },
+      "bilateral_d21": {
+        "true_pct": 7.886435331230284,
+        "pred_pct": 6.94006309148265
+      },
+      "nlm_tw5_sw11": {
+        "true_pct": 13.8801261829653,
+        "pred_pct": 6.782334384858044
+      },
+      "bilateral_d5": {
+        "true_pct": 6.151419558359621,
+        "pred_pct": 5.047318611987381
+      },
+      "bilateral_d9": {
+        "true_pct": 11.987381703470032,
+        "pred_pct": 4.889589905362776
+      },
+      "median_k3": {
+        "true_pct": 6.94006309148265,
+        "pred_pct": 4.73186119873817
+      },
+      "median_k15": {
+        "true_pct": 2.5236593059936907,
+        "pred_pct": 2.996845425867508
+      },
+      "median_k7": {
+        "true_pct": 0.47318611987381703,
+        "pred_pct": 0.47318611987381703
+      },
+      "median_k5": {
+        "true_pct": 1.2618296529968454,
+        "pred_pct": 0.47318611987381703
+      },
+      "bilateral_d15": {
+        "true_pct": 2.2082018927444795,
+        "pred_pct": 0.15772870662460567
+      },
+      "median_k9": {
+        "true_pct": 0.31545741324921134,
+        "pred_pct": 0.0
+      }
+    }
+  },
+  "ssim_impact": {
+    "n_compared": 427,
+    "n_skipped": 0,
+    "mean_ssim_loss": 0.030561344392442555,
+    "median_ssim_loss": 0.008285102362775798,
+    "fraction_negligible_loss_lt_0.01": 0.5081967213114754
+  },
+  "accuracy_by_question_phrasing": {
+    "Tell me what's damaged in this photo and how to restore it properly.": {
+      "n": 53,
+      "type_set_accuracy": 0.37735849056603776,
+      "order_accuracy_given_type_correct": 0.9
+    },
+    "Fix this image.": {
+      "n": 65,
+      "type_set_accuracy": 0.4153846153846154,
+      "order_accuracy_given_type_correct": 0.8148148148148148
+    },
+    "Give me a diagnosis and a repair plan for this photo.": {
+      "n": 47,
+      "type_set_accuracy": 0.3829787234042553,
+      "order_accuracy_given_type_correct": 0.7777777777777778
+    },
+    "Determine which distortions affect this image and the correct order to restore it.": {
+      "n": 42,
+      "type_set_accuracy": 0.6190476190476191,
+      "order_accuracy_given_type_correct": 0.9230769230769231
+    },
+    "Spot the issues here and tell me how to fix them, step by step.": {
+      "n": 55,
+      "type_set_accuracy": 0.4,
+      "order_accuracy_given_type_correct": 0.7272727272727273
+    },
+    "Identify all distortions present and propose an ordered restoration pipeline.": {
+      "n": 63,
+      "type_set_accuracy": 0.49206349206349204,
+      "order_accuracy_given_type_correct": 0.6774193548387096
+    },
+    "Is this photo degraded? If so, how many ways, and what's the fix?": {
+      "n": 41,
+      "type_set_accuracy": 0.4146341463414634,
+      "order_accuracy_given_type_correct": 0.7647058823529411
+    },
+    "What's wrong with this photo, and in what order should I fix it?": {
+      "n": 52,
+      "type_set_accuracy": 0.4423076923076923,
+      "order_accuracy_given_type_correct": 0.9130434782608695
+    },
+    "Inspect this image for artifacts. List every issue found and the restoration pipeline to correct them.": {
+      "n": 46,
+      "type_set_accuracy": 0.43478260869565216,
+      "order_accuracy_given_type_correct": 0.7
+    },
+    "Assess this image for degradation and lay out the restoration steps in order.": {
+      "n": 41,
+      "type_set_accuracy": 0.5609756097560976,
+      "order_accuracy_given_type_correct": 0.6086956521739131
+    },
+    "This photo looks degraded in more than one way \u2014 what's going on, and how do I fix all of it?": {
+      "n": 56,
+      "type_set_accuracy": 0.42857142857142855,
+      "order_accuracy_given_type_correct": 0.9166666666666666
+    },
+    "This image may have more than one problem. Diagnose it and describe the fix, in order.": {
+      "n": 53,
+      "type_set_accuracy": 0.41509433962264153,
+      "order_accuracy_given_type_correct": 0.8181818181818182
+    },
+    "How would you clean this image up?": {
+      "n": 66,
+      "type_set_accuracy": 0.3333333333333333,
+      "order_accuracy_given_type_correct": 0.7272727272727273
+    },
+    "Diagnose this picture \u2014 could be one issue or several \u2014 and tell me the fix pipeline.": {
+      "n": 66,
+      "type_set_accuracy": 0.4090909090909091,
+      "order_accuracy_given_type_correct": 0.8148148148148148
+    },
+    "Walk me through fixing this image.": {
+      "n": 44,
+      "type_set_accuracy": 0.4318181818181818,
+      "order_accuracy_given_type_correct": 0.8947368421052632
+    },
+    "What's wrong with this photo?": {
+      "n": 38,
+      "type_set_accuracy": 0.3684210526315789,
+      "order_accuracy_given_type_correct": 0.6428571428571429
+    },
+    "Analyze this image. Identify any distortions present and give a step-by-step restoration plan.": {
+      "n": 47,
+      "type_set_accuracy": 0.425531914893617,
+      "order_accuracy_given_type_correct": 1.0
+    },
+    "Evaluate this image for combined distortions and recommend a full restoration sequence.": {
+      "n": 48,
+      "type_set_accuracy": 0.4166666666666667,
+      "order_accuracy_given_type_correct": 0.75
+    },
+    "Check this photo for problems.": {
+      "n": 36,
+      "type_set_accuracy": 0.3055555555555556,
+      "order_accuracy_given_type_correct": 0.7272727272727273
+    },
+    "Anything off with this pic? How do I fix it?": {
+      "n": 41,
+      "type_set_accuracy": 0.5121951219512195,
+      "order_accuracy_given_type_correct": 0.8571428571428571
+    }
+  },
+  "n_flagged_examples": 573
+}

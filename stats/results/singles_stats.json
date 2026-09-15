@@ -1,0 +1,654 @@
+{
+  "n_total": 1000,
+  "n_unique_photos": 1000,
+  "recall_per_type": {
+    "jpeg": {
+      "n": 324,
+      "recall": 0.8734567901234568
+    },
+    "noise": {
+      "n": 358,
+      "recall": 0.8324022346368715
+    },
+    "gamma": {
+      "n": 318,
+      "recall": 0.7610062893081762
+    }
+  },
+  "n_wrong": 326,
+  "missed_entirely": 177,
+  "over_detected": 149,
+  "over_detection_extra_type": {
+    "jpeg": 31,
+    "gamma": 78,
+    "noise": 9
+  },
+  "over_detection_by_true_severity": {
+    "jpeg": {
+      "0": {
+        "rate": 0.0,
+        "n": 27
+      },
+      "1": {
+        "rate": 0.08108108108108109,
+        "n": 37
+      },
+      "2": {
+        "rate": 0.03571428571428571,
+        "n": 28
+      },
+      "3": {
+        "rate": 0.11538461538461539,
+        "n": 26
+      },
+      "4": {
+        "rate": 0.10256410256410256,
+        "n": 39
+      },
+      "5": {
+        "rate": 0.12,
+        "n": 25
+      },
+      "6": {
+        "rate": 0.1,
+        "n": 40
+      },
+      "7": {
+        "rate": 0.24242424242424243,
+        "n": 33
+      },
+      "8": {
+        "rate": 0.2926829268292683,
+        "n": 41
+      },
+      "9": {
+        "rate": 0.07142857142857142,
+        "n": 28
+      }
+    },
+    "noise": {
+      "0": {
+        "rate": 0.0,
+        "n": 38
+      },
+      "1": {
+        "rate": 0.1111111111111111,
+        "n": 36
+      },
+      "2": {
+        "rate": 0.40540540540540543,
+        "n": 37
+      },
+      "3": {
+        "rate": 0.20930232558139536,
+        "n": 43
+      },
+      "4": {
+        "rate": 0.2857142857142857,
+        "n": 28
+      },
+      "5": {
+        "rate": 0.22580645161290322,
+        "n": 31
+      },
+      "6": {
+        "rate": 0.3870967741935484,
+        "n": 31
+      },
+      "7": {
+        "rate": 0.3333333333333333,
+        "n": 33
+      },
+      "8": {
+        "rate": 0.35,
+        "n": 40
+      },
+      "9": {
+        "rate": 0.1951219512195122,
+        "n": 41
+      }
+    },
+    "gamma": {
+      "0": {
+        "rate": 0.029850746268656716,
+        "n": 67
+      },
+      "1": {
+        "rate": 0.0,
+        "n": 56
+      },
+      "2": {
+        "rate": 0.08064516129032258,
+        "n": 62
+      },
+      "3": {
+        "rate": 0.13432835820895522,
+        "n": 67
+      },
+      "4": {
+        "rate": 0.07575757575757576,
+        "n": 66
+      }
+    }
+  },
+  "missed_silent": 156,
+  "missed_type_confusion": 21,
+  "type_confusion_matrix": {
+    "jpeg": {
+      "n_confused": 8,
+      "predicted_instead": {
+        "gamma": 8
+      }
+    },
+    "noise": {
+      "n_confused": 9,
+      "predicted_instead": {
+        "gamma": 8,
+        "jpeg": 1
+      }
+    },
+    "gamma": {
+      "n_confused": 4,
+      "predicted_instead": {
+        "jpeg": 2,
+        "noise": 2
+      }
+    }
+  },
+  "silent_miss_rate_by_severity": {
+    "jpeg": {
+      "0": {
+        "rate": 0.7407407407407407,
+        "n": 27
+      },
+      "1": {
+        "rate": 0.21621621621621623,
+        "n": 37
+      },
+      "2": {
+        "rate": 0.07142857142857142,
+        "n": 28
+      },
+      "3": {
+        "rate": 0.07692307692307693,
+        "n": 26
+      },
+      "4": {
+        "rate": 0.02564102564102564,
+        "n": 39
+      },
+      "5": {
+        "rate": 0.0,
+        "n": 25
+      },
+      "6": {
+        "rate": 0.0,
+        "n": 40
+      },
+      "7": {
+        "rate": 0.0,
+        "n": 33
+      },
+      "8": {
+        "rate": 0.0,
+        "n": 41
+      },
+      "9": {
+        "rate": 0.0,
+        "n": 28
+      }
+    },
+    "noise": {
+      "0": {
+        "rate": 0.8421052631578947,
+        "n": 38
+      },
+      "1": {
+        "rate": 0.5,
+        "n": 36
+      },
+      "2": {
+        "rate": 0.02702702702702703,
+        "n": 37
+      },
+      "3": {
+        "rate": 0.0,
+        "n": 43
+      },
+      "4": {
+        "rate": 0.0,
+        "n": 28
+      },
+      "5": {
+        "rate": 0.0,
+        "n": 31
+      },
+      "6": {
+        "rate": 0.0,
+        "n": 31
+      },
+      "7": {
+        "rate": 0.0,
+        "n": 33
+      },
+      "8": {
+        "rate": 0.0,
+        "n": 40
+      },
+      "9": {
+        "rate": 0.0,
+        "n": 41
+      }
+    },
+    "gamma": {
+      "0": {
+        "rate": 0.6716417910447762,
+        "n": 67
+      },
+      "1": {
+        "rate": 0.375,
+        "n": 56
+      },
+      "2": {
+        "rate": 0.08064516129032258,
+        "n": 62
+      },
+      "3": {
+        "rate": 0.014925373134328358,
+        "n": 67
+      },
+      "4": {
+        "rate": 0.0,
+        "n": 66
+      }
+    }
+  },
+  "method_accuracy": {
+    "jpeg": {
+      "n": 324,
+      "method_accuracy": 0.6111111111111112,
+      "method_family_accuracy": 0.7901234567901234
+    },
+    "noise": {
+      "n": 358,
+      "method_accuracy": 0.5279329608938548,
+      "method_family_accuracy": 0.6536312849162011
+    },
+    "gamma": {
+      "n": 318,
+      "method_accuracy": 0.7610062893081762,
+      "method_family_accuracy": 0.7610062893081762
+    }
+  },
+  "method_accuracy_given_type_correct": {
+    "jpeg": {
+      "n": 243,
+      "method_accuracy": 0.691358024691358,
+      "method_family_accuracy": 0.9012345679012346
+    },
+    "noise": {
+      "n": 210,
+      "method_accuracy": 0.638095238095238,
+      "method_family_accuracy": 0.7904761904761904
+    },
+    "gamma": {
+      "n": 221,
+      "method_accuracy": 1.0,
+      "method_family_accuracy": 1.0
+    }
+  },
+  "value_accuracy": {
+    "jpeg": {
+      "n": 324,
+      "exact_fraction": 0.7376543209876543,
+      "within1_fraction": 0.8703703703703703,
+      "index_distance_distribution": {
+        "0": 239,
+        "1": 43,
+        "2": 1
+      }
+    },
+    "noise": {
+      "n": 358,
+      "exact_fraction": 0.4720670391061452,
+      "within1_fraction": 0.7821229050279329,
+      "index_distance_distribution": {
+        "0": 169,
+        "1": 111,
+        "2": 17,
+        "3": 1
+      }
+    },
+    "gamma": {
+      "n": 318,
+      "exact_fraction": 0.3490566037735849,
+      "within1_fraction": 0.6886792452830188,
+      "index_distance_distribution": {
+        "0": 111,
+        "1": 108,
+        "2": 18,
+        "3": 5
+      }
+    }
+  },
+  "value_accuracy_excluding_weak_severity": {
+    "jpeg": {
+      "all": {
+        "n": 324,
+        "exact_fraction": 0.7376543209876543,
+        "within1_fraction": 0.8703703703703703
+      },
+      "excl_sev<=0": {
+        "n": 297,
+        "exact_fraction": 0.8013468013468014,
+        "within1_fraction": 0.936026936026936
+      },
+      "excl_sev<=1": {
+        "n": 260,
+        "exact_fraction": 0.8153846153846154,
+        "within1_fraction": 0.9653846153846154
+      }
+    },
+    "noise": {
+      "all": {
+        "n": 358,
+        "exact_fraction": 0.4720670391061452,
+        "within1_fraction": 0.7821229050279329
+      },
+      "excl_sev<=0": {
+        "n": 320,
+        "exact_fraction": 0.528125,
+        "within1_fraction": 0.875
+      },
+      "excl_sev<=1": {
+        "n": 284,
+        "exact_fraction": 0.545774647887324,
+        "within1_fraction": 0.9295774647887324
+      }
+    },
+    "gamma": {
+      "all": {
+        "n": 318,
+        "exact_fraction": 0.3490566037735849,
+        "within1_fraction": 0.6886792452830188
+      },
+      "excl_sev<=0": {
+        "n": 251,
+        "exact_fraction": 0.44223107569721115,
+        "within1_fraction": 0.8207171314741036
+      },
+      "excl_sev<=1": {
+        "n": 195,
+        "exact_fraction": 0.46153846153846156,
+        "within1_fraction": 0.8923076923076924
+      }
+    }
+  },
+  "value_accuracy_graduated_miss": {
+    "jpeg": {
+      "n": 324,
+      "exact_fraction": 0.7376543209876543,
+      "within1_strict": 0.8703703703703703,
+      "within1_graduated": 0.941358024691358,
+      "within2_strict": 0.8734567901234568,
+      "within2_graduated": 0.9753086419753086
+    },
+    "noise": {
+      "n": 358,
+      "exact_fraction": 0.4720670391061452,
+      "within1_strict": 0.7821229050279329,
+      "within1_graduated": 0.888268156424581,
+      "within2_strict": 0.8296089385474861,
+      "within2_graduated": 0.9916201117318436
+    },
+    "gamma": {
+      "n": 318,
+      "exact_fraction": 0.3490566037735849,
+      "within1_strict": 0.6886792452830188,
+      "within1_graduated": 0.839622641509434,
+      "within2_strict": 0.7452830188679245,
+      "within2_graduated": 0.9622641509433962
+    }
+  },
+  "strict_type_set_accuracy": 0.674,
+  "lenient_type_set_accuracy": {
+    "sev<=0": {
+      "extra_only": 0.693,
+      "symmetric": 0.79
+    },
+    "sev<=1": {
+      "extra_only": 0.748,
+      "symmetric": 0.892
+    }
+  },
+  "method_memorization": {
+    "jpeg": {
+      "bilateral_d3": {
+        "true_pct": 48.76543209876543,
+        "pred_pct": 50.0
+      },
+      "bilateral_d5": {
+        "true_pct": 20.987654320987655,
+        "pred_pct": 19.135802469135804
+      },
+      "bilateral_d9": {
+        "true_pct": 19.444444444444443,
+        "pred_pct": 15.123456790123457
+      },
+      "null": {
+        "true_pct": 0.0,
+        "pred_pct": 12.654320987654321
+      },
+      "nlm_tw5_sw11": {
+        "true_pct": 7.716049382716049,
+        "pred_pct": 2.7777777777777777
+      },
+      "bndry_k3": {
+        "true_pct": 2.1604938271604937,
+        "pred_pct": 0.30864197530864196
+      },
+      "gauss_0.2x": {
+        "true_pct": 0.9259259259259259,
+        "pred_pct": 0.0
+      }
+    },
+    "noise": {
+      "bilateral_d3": {
+        "true_pct": 51.39664804469274,
+        "pred_pct": 56.14525139664804
+      },
+      "null": {
+        "true_pct": 0.0,
+        "pred_pct": 16.75977653631285
+      },
+      "bilateral_d21": {
+        "true_pct": 6.983240223463687,
+        "pred_pct": 9.217877094972067
+      },
+      "nlm_tw5_sw11": {
+        "true_pct": 8.938547486033519,
+        "pred_pct": 5.027932960893855
+      },
+      "median_k3": {
+        "true_pct": 6.424581005586592,
+        "pred_pct": 3.35195530726257
+      },
+      "bilateral_d5": {
+        "true_pct": 8.100558659217876,
+        "pred_pct": 3.35195530726257
+      },
+      "bilateral_d9": {
+        "true_pct": 10.893854748603353,
+        "pred_pct": 3.0726256983240225
+      },
+      "median_k15": {
+        "true_pct": 1.675977653631285,
+        "pred_pct": 2.5139664804469275
+      },
+      "median_k7": {
+        "true_pct": 0.5586592178770949,
+        "pred_pct": 0.27932960893854747
+      },
+      "median_k5": {
+        "true_pct": 0.8379888268156425,
+        "pred_pct": 0.27932960893854747
+      },
+      "median_k9": {
+        "true_pct": 0.27932960893854747,
+        "pred_pct": 0.0
+      },
+      "bilateral_d15": {
+        "true_pct": 3.910614525139665,
+        "pred_pct": 0.0
+      }
+    }
+  },
+  "ssim_impact": {
+    "jpeg": {
+      "overall": {
+        "n": 324,
+        "mean_ssim_loss": 0.0020994857962012524,
+        "median_ssim_loss": 4.2721671694723184e-07,
+        "fraction_negligible_loss_lt_0.01": 0.9660493827160493
+      },
+      "compared": {
+        "n": 283,
+        "mean_ssim_loss": 0.0018909920069646693,
+        "median_ssim_loss": 3.054808889180194e-07,
+        "fraction_negligible_loss_lt_0.01": 0.9752650176678446
+      },
+      "no_restoration": {
+        "n": 41,
+        "mean_ssim_loss": 0.003538601463370838,
+        "median_ssim_loss": 0.002312595199088774,
+        "fraction_negligible_loss_lt_0.01": 0.9024390243902439
+      },
+      "n_truly_unsimulable": 0
+    },
+    "noise": {
+      "overall": {
+        "n": 358,
+        "mean_ssim_loss": 0.010154003241853433,
+        "median_ssim_loss": 0.00013763456411197694,
+        "fraction_negligible_loss_lt_0.01": 0.770949720670391
+      },
+      "compared": {
+        "n": 298,
+        "mean_ssim_loss": 0.008851990983981537,
+        "median_ssim_loss": 0.00013913792535652503,
+        "fraction_negligible_loss_lt_0.01": 0.7986577181208053
+      },
+      "no_restoration": {
+        "n": 60,
+        "mean_ssim_loss": 0.016620664122617188,
+        "median_ssim_loss": 7.452730771906335e-05,
+        "fraction_negligible_loss_lt_0.01": 0.6333333333333333
+      },
+      "n_truly_unsimulable": 0
+    },
+    "gamma": {
+      "overall": {
+        "n": 318,
+        "mean_ssim_loss": 0.0682850682869666,
+        "median_ssim_loss": 0.0403289705564947,
+        "fraction_negligible_loss_lt_0.01": 0.3522012578616352
+      },
+      "compared": {
+        "n": 242,
+        "mean_ssim_loss": 0.043768360743343594,
+        "median_ssim_loss": 0.022884772470316617,
+        "fraction_negligible_loss_lt_0.01": 0.4628099173553719
+      },
+      "no_restoration": {
+        "n": 76,
+        "mean_ssim_loss": 0.14635142651797667,
+        "median_ssim_loss": 0.0963492245963033,
+        "fraction_negligible_loss_lt_0.01": 0.0
+      },
+      "n_truly_unsimulable": 0
+    }
+  },
+  "accuracy_by_question_phrasing": {
+    "Walk me through fixing this image.": {
+      "n": 53,
+      "type_set_accuracy": 0.660377358490566
+    },
+    "Give me a diagnosis and a repair plan for this photo.": {
+      "n": 41,
+      "type_set_accuracy": 0.7317073170731707
+    },
+    "Anything off with this pic? How do I fix it?": {
+      "n": 47,
+      "type_set_accuracy": 0.7021276595744681
+    },
+    "How would you clean this image up?": {
+      "n": 51,
+      "type_set_accuracy": 0.7058823529411765
+    },
+    "Fix this image.": {
+      "n": 51,
+      "type_set_accuracy": 0.6274509803921569
+    },
+    "This photo looks degraded in more than one way \u2014 what's going on, and how do I fix all of it?": {
+      "n": 57,
+      "type_set_accuracy": 0.6491228070175439
+    },
+    "Inspect this image for artifacts. List every issue found and the restoration pipeline to correct them.": {
+      "n": 63,
+      "type_set_accuracy": 0.6984126984126984
+    },
+    "This image may have more than one problem. Diagnose it and describe the fix, in order.": {
+      "n": 56,
+      "type_set_accuracy": 0.7142857142857143
+    },
+    "Analyze this image. Identify any distortions present and give a step-by-step restoration plan.": {
+      "n": 57,
+      "type_set_accuracy": 0.6140350877192983
+    },
+    "Evaluate this image for combined distortions and recommend a full restoration sequence.": {
+      "n": 50,
+      "type_set_accuracy": 0.62
+    },
+    "Identify all distortions present and propose an ordered restoration pipeline.": {
+      "n": 45,
+      "type_set_accuracy": 0.6222222222222222
+    },
+    "Diagnose this picture \u2014 could be one issue or several \u2014 and tell me the fix pipeline.": {
+      "n": 40,
+      "type_set_accuracy": 0.725
+    },
+    "Assess this image for degradation and lay out the restoration steps in order.": {
+      "n": 39,
+      "type_set_accuracy": 0.6153846153846154
+    },
+    "Tell me what's damaged in this photo and how to restore it properly.": {
+      "n": 46,
+      "type_set_accuracy": 0.5869565217391305
+    },
+    "Spot the issues here and tell me how to fix them, step by step.": {
+      "n": 40,
+      "type_set_accuracy": 0.775
+    },
+    "Is this photo degraded? If so, how many ways, and what's the fix?": {
+      "n": 49,
+      "type_set_accuracy": 0.7346938775510204
+    },
+    "Determine which distortions affect this image and the correct order to restore it.": {
+      "n": 56,
+      "type_set_accuracy": 0.8035714285714286
+    },
+    "What's wrong with this photo?": {
+      "n": 57,
+      "type_set_accuracy": 0.7368421052631579
+    },
+    "What's wrong with this photo, and in what order should I fix it?": {
+      "n": 53,
+      "type_set_accuracy": 0.5094339622641509
+    },
+    "Check this photo for problems.": {
+      "n": 49,
+      "type_set_accuracy": 0.6530612244897959
+    }
+  },
+  "n_flagged_examples": 326
+}

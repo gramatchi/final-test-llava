@@ -1,0 +1,122 @@
+[
+  {
+    "id": "0003131_final_none_752374",
+    "base_id": "0003131",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003131.png",
+    "image_path_relative": "extra_images/0004000/0003131.png",
+    "pred_type": "gamma",
+    "claimed_method": "lut",
+    "claimed_value": 2.3,
+    "output": "I find 1 distortion present: exposure shift. This photo shows noticeably dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "achieved_ssim": 0.3168581002271144,
+    "ssim_loss": 0.6831418997728855
+  },
+  {
+    "id": "0003004_final_none_322570",
+    "base_id": "0003004",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003004.png",
+    "image_path_relative": "extra_images/0004000/0003004.png",
+    "pred_type": "gamma",
+    "claimed_method": "lut",
+    "claimed_value": 0.44,
+    "output": "I find 1 distortion present: exposure shift. This photo shows noticeably bright exposure shift (gamma\u22480.44). Apply 'lut' to correct it.",
+    "achieved_ssim": 0.3650088761423074,
+    "ssim_loss": 0.6349911238576926
+  },
+  {
+    "id": "0003213_final_none_595610",
+    "base_id": "0003213",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003213.png",
+    "image_path_relative": "extra_images/0004000/0003213.png",
+    "pred_type": "gamma",
+    "claimed_method": "lut",
+    "claimed_value": 2.3,
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows fairly dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "achieved_ssim": 0.4341499435563327,
+    "ssim_loss": 0.5658500564436673
+  },
+  {
+    "id": "0003796_final_none_68341",
+    "base_id": "0003796",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003796.png",
+    "image_path_relative": "extra_images/0004000/0003796.png",
+    "pred_type": "gamma",
+    "claimed_method": "lut",
+    "claimed_value": 2.3,
+    "output": "I find 1 distortion present: exposure shift. This photo shows noticeably dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "achieved_ssim": 0.4460489269428077,
+    "ssim_loss": 0.5539510730571924
+  },
+  {
+    "id": "0004000_final_none_400891",
+    "base_id": "0004000",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0004000.png",
+    "image_path_relative": "extra_images/0004000/0004000.png",
+    "pred_type": "gamma",
+    "claimed_method": "lut",
+    "claimed_value": 2.3,
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows fairly dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "achieved_ssim": 0.4856976945673545,
+    "ssim_loss": 0.5143023054326454
+  },
+  {
+    "id": "0003644_final_none_202547",
+    "base_id": "0003644",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003644.png",
+    "image_path_relative": "extra_images/0004000/0003644.png",
+    "pred_type": "gamma",
+    "claimed_method": "lut",
+    "claimed_value": 3.03,
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows distinctly dark exposure shift (gamma\u22483.03). Fix it using 'lut'.",
+    "achieved_ssim": 0.48849568554329165,
+    "ssim_loss": 0.5115043144567084
+  },
+  {
+    "id": "0003712_final_none_118195",
+    "base_id": "0003712",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003712.png",
+    "image_path_relative": "extra_images/0004000/0003712.png",
+    "pred_type": "gamma",
+    "claimed_method": "lut",
+    "claimed_value": 2.3,
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows fairly dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "achieved_ssim": 0.5127934701266227,
+    "ssim_loss": 0.4872065298733773
+  },
+  {
+    "id": "0003897_final_none_415785",
+    "base_id": "0003897",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003897.png",
+    "image_path_relative": "extra_images/0004000/0003897.png",
+    "pred_type": "gamma",
+    "claimed_method": "lut",
+    "claimed_value": 0.58,
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "achieved_ssim": 0.5422813274122554,
+    "ssim_loss": 0.45771867258774457
+  },
+  {
+    "id": "0003901_final_none_888726",
+    "base_id": "0003901",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003901.png",
+    "image_path_relative": "extra_images/0004000/0003901.png",
+    "pred_type": "gamma",
+    "claimed_method": "lut",
+    "claimed_value": 0.58,
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "achieved_ssim": 0.5594972507223454,
+    "ssim_loss": 0.44050274927765465
+  },
+  {
+    "id": "0003710_final_none_834248",
+    "base_id": "0003710",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003710.png",
+    "image_path_relative": "extra_images/0004000/0003710.png",
+    "pred_type": "gamma",
+    "claimed_method": "lut",
+    "claimed_value": 1.74,
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "achieved_ssim": 0.5850160205758436,
+    "ssim_loss": 0.41498397942415644
+  }
+]

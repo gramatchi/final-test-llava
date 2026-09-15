@@ -1,0 +1,1902 @@
+[
+  {
+    "id": "0003004_final_none_322570",
+    "base_id": "0003004",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003004.png",
+    "image_path_relative": "extra_images/0004000/0003004.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows noticeably bright exposure shift (gamma\u22480.44). Apply 'lut' to correct it.",
+    "brightness": 76.80776893302507,
+    "brightness_zscore": 0.8769346358386698
+  },
+  {
+    "id": "0003014_final_none_395504",
+    "base_id": "0003014",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003014.png",
+    "image_path_relative": "extra_images/0004000/0003014.png",
+    "pred_types": [
+      "noise"
+    ],
+    "output": "I find 1 distortion present: Gaussian noise. This photo shows very mild Gaussian noise (sigma\u224810). Fix it using 'bilateral_d21'.",
+    "brightness": 148.6773853130996,
+    "brightness_zscore": 1.329600267963212
+  },
+  {
+    "id": "0003016_final_none_575453",
+    "base_id": "0003016",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003016.png",
+    "image_path_relative": "extra_images/0004000/0003016.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows noticeably bright exposure shift (gamma\u22480.44). Apply 'lut' to correct it.",
+    "brightness": 128.20169777199075,
+    "brightness_zscore": 0.7009574350883728
+  },
+  {
+    "id": "0003018_final_none_503329",
+    "base_id": "0003018",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003018.png",
+    "image_path_relative": "extra_images/0004000/0003018.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22480.76). Apply 'lut' to correct it.",
+    "brightness": 135.81062973484848,
+    "brightness_zscore": 0.9345662228118328
+  },
+  {
+    "id": "0003025_final_none_757138",
+    "base_id": "0003025",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003025.png",
+    "image_path_relative": "extra_images/0004000/0003025.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows moderately bright exposure shift (gamma\u22480.44). Apply 'lut' to correct it.",
+    "brightness": 148.84395716198125,
+    "brightness_zscore": 1.334714342826287
+  },
+  {
+    "id": "0003028_final_none_532926",
+    "base_id": "0003028",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003028.png",
+    "image_path_relative": "extra_images/0004000/0003028.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 130.05938243473508,
+    "brightness_zscore": 0.757991913009132
+  },
+  {
+    "id": "0003034_final_none_420391",
+    "base_id": "0003034",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003034.png",
+    "image_path_relative": "extra_images/0004000/0003034.png",
+    "pred_types": [
+      "jpeg"
+    ],
+    "output": "This image has 1 distortion: JPEG compression. This photo shows very mild JPEG compression (quality 85). Fix it using 'bilateral_d3'.",
+    "brightness": 84.68466553287982,
+    "brightness_zscore": 0.6350988204183923
+  },
+  {
+    "id": "0003051_final_none_78320",
+    "base_id": "0003051",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003051.png",
+    "image_path_relative": "extra_images/0004000/0003051.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22480.76). Apply 'lut' to correct it.",
+    "brightness": 160.33704618473897,
+    "brightness_zscore": 1.687574193185083
+  },
+  {
+    "id": "0003054_final_none_350591",
+    "base_id": "0003054",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003054.png",
+    "image_path_relative": "extra_images/0004000/0003054.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows noticeably bright exposure shift (gamma\u22480.44). Apply 'lut' to correct it.",
+    "brightness": 152.61324893477547,
+    "brightness_zscore": 1.4504388210995505
+  },
+  {
+    "id": "0003065_final_none_308369",
+    "base_id": "0003065",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003065.png",
+    "image_path_relative": "extra_images/0004000/0003065.png",
+    "pred_types": [
+      "noise"
+    ],
+    "output": "This image has 1 distortion: Gaussian noise. This photo shows light Gaussian noise (sigma\u224820). Fix it using 'bilateral_d21'.",
+    "brightness": 78.4762126984127,
+    "brightness_zscore": 0.8257102159963636
+  },
+  {
+    "id": "0003072_final_none_357073",
+    "base_id": "0003072",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003072.png",
+    "image_path_relative": "extra_images/0004000/0003072.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 134.93850238095237,
+    "brightness_zscore": 0.9077902423090949
+  },
+  {
+    "id": "0003073_final_none_266988",
+    "base_id": "0003073",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003073.png",
+    "image_path_relative": "extra_images/0004000/0003073.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 67.36193127289108,
+    "brightness_zscore": 1.1669399474366657
+  },
+  {
+    "id": "0003075_final_none_175244",
+    "base_id": "0003075",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003075.png",
+    "image_path_relative": "extra_images/0004000/0003075.png",
+    "pred_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "output": "I find 2 distortions present: exposure shift, JPEG compression. Corruption order: JPEG compression \u2192 exposure shift. Restoration order (reverse): exposure shift \u2192 JPEG compression. This image shows 2 combined issues: faintly dark exposure shift (gamma\u22481.74), very mild JPEG compression (quality 85). Fix these in this order: (1) apply 'lut' to correct the faintly dark exposure shift (gamma\u22481.74); (2) restore from the very mild JPEG compression (quality 85) with 'bilateral_d9'.",
+    "brightness": 49.784768438143004,
+    "brightness_zscore": 1.7065925191099676
+  },
+  {
+    "id": "0003088_final_none_758676",
+    "base_id": "0003088",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003088.png",
+    "image_path_relative": "extra_images/0004000/0003088.png",
+    "pred_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "output": "I find 2 distortions present: exposure shift, JPEG compression. Corruption order: exposure shift \u2192 JPEG compression. Restoration order (reverse): JPEG compression \u2192 exposure shift. This image shows 2 combined issues: very mild JPEG compression (quality 85), noticeably dark exposure shift (gamma\u22482.3). Fix these in this order: (1) fix the very mild JPEG compression (quality 85) using 'bilateral_d3'; (2) use 'lut' to handle the noticeably dark exposure shift (gamma\u22482.3).",
+    "brightness": 91.62332577475435,
+    "brightness_zscore": 0.4220686585715386
+  },
+  {
+    "id": "0003090_final_none_467594",
+    "base_id": "0003090",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003090.png",
+    "image_path_relative": "extra_images/0004000/0003090.png",
+    "pred_types": [
+      "jpeg"
+    ],
+    "output": "I can identify 1 distortion here: JPEG compression. This photo shows fairly noticeable JPEG compression (quality 25). Fix it using 'bilateral_d3'.",
+    "brightness": 103.11467804551539,
+    "brightness_zscore": 0.06926212982614391
+  },
+  {
+    "id": "0003101_final_none_452002",
+    "base_id": "0003101",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003101.png",
+    "image_path_relative": "extra_images/0004000/0003101.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 181.5150569566277,
+    "brightness_zscore": 2.337779694688502
+  },
+  {
+    "id": "0003103_final_none_325749",
+    "base_id": "0003103",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003103.png",
+    "image_path_relative": "extra_images/0004000/0003103.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows noticeably bright exposure shift (gamma\u22480.44). Apply 'lut' to correct it.",
+    "brightness": 222.10502146026235,
+    "brightness_zscore": 3.5839693633198797
+  },
+  {
+    "id": "0003104_final_none_838241",
+    "base_id": "0003104",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003104.png",
+    "image_path_relative": "extra_images/0004000/0003104.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Fix it using 'lut'.",
+    "brightness": 112.15334777502697,
+    "brightness_zscore": 0.20824234628838603
+  },
+  {
+    "id": "0003105_final_none_468437",
+    "base_id": "0003105",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003105.png",
+    "image_path_relative": "extra_images/0004000/0003105.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32). Apply 'lut' to correct it.",
+    "brightness": 90.4599595979081,
+    "brightness_zscore": 0.45778622886631337
+  },
+  {
+    "id": "0003128_final_none_554777",
+    "base_id": "0003128",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003128.png",
+    "image_path_relative": "extra_images/0004000/0003128.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows noticeably bright exposure shift (gamma\u22480.44). Apply 'lut' to correct it.",
+    "brightness": 140.6923941798942,
+    "brightness_zscore": 1.0844457432919063
+  },
+  {
+    "id": "0003131_final_none_752374",
+    "base_id": "0003131",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003131.png",
+    "image_path_relative": "extra_images/0004000/0003131.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows noticeably dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "brightness": 27.831701710390945,
+    "brightness_zscore": 2.3805937232364234
+  },
+  {
+    "id": "0003145_final_none_168106",
+    "base_id": "0003145",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003145.png",
+    "image_path_relative": "extra_images/0004000/0003145.png",
+    "pred_types": [
+      "jpeg",
+      "noise"
+    ],
+    "output": "I find 2 distortions present: JPEG compression, Gaussian noise. Corruption order: JPEG compression \u2192 Gaussian noise. Restoration order (reverse): Gaussian noise \u2192 JPEG compression. This image shows 2 combined issues: very mild Gaussian noise (sigma\u224810), very slight JPEG compression (quality 85). To restore it, follow these steps in order: (1) fix the very mild Gaussian noise (sigma\u224810) using 'bilateral_d21'; (2) use 'bilateral_d3' to handle the very slight JPEG compression (quality 85).",
+    "brightness": 63.18187860266349,
+    "brightness_zscore": 1.295275572157554
+  },
+  {
+    "id": "0003152_final_none_522404",
+    "base_id": "0003152",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003152.png",
+    "image_path_relative": "extra_images/0004000/0003152.png",
+    "pred_types": [
+      "jpeg"
+    ],
+    "output": "I find 1 distortion present: JPEG compression. This photo shows light-to-moderate JPEG compression (quality 60). Fix it using 'bilateral_d3'.",
+    "brightness": 17.460611770754515,
+    "brightness_zscore": 2.6990060523249206
+  },
+  {
+    "id": "0003156_final_none_150206",
+    "base_id": "0003156",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003156.png",
+    "image_path_relative": "extra_images/0004000/0003156.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 92.40019361391481,
+    "brightness_zscore": 0.39821732766024753
+  },
+  {
+    "id": "0003159_final_none_800307",
+    "base_id": "0003159",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003159.png",
+    "image_path_relative": "extra_images/0004000/0003159.png",
+    "pred_types": [
+      "jpeg"
+    ],
+    "output": "I can identify 1 distortion here: JPEG compression. This photo shows very slight JPEG compression (quality 85). Fix it using 'bilateral_d3'.",
+    "brightness": 112.53857478365497,
+    "brightness_zscore": 0.22006955343430476
+  },
+  {
+    "id": "0003163_final_none_308021",
+    "base_id": "0003163",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003163.png",
+    "image_path_relative": "extra_images/0004000/0003163.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows faintly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 158.31335730198512,
+    "brightness_zscore": 1.6254430676950324
+  },
+  {
+    "id": "0003170_final_none_480641",
+    "base_id": "0003170",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003170.png",
+    "image_path_relative": "extra_images/0004000/0003170.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32). Apply 'lut' to correct it.",
+    "brightness": 37.94736040576588,
+    "brightness_zscore": 2.0700236226774886
+  },
+  {
+    "id": "0003182_final_none_637314",
+    "base_id": "0003182",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003182.png",
+    "image_path_relative": "extra_images/0004000/0003182.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 183.76354262850109,
+    "brightness_zscore": 2.4068125122487
+  },
+  {
+    "id": "0003183_final_none_112490",
+    "base_id": "0003183",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003183.png",
+    "image_path_relative": "extra_images/0004000/0003183.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 92.25902085907734,
+    "brightness_zscore": 0.40255160167901227
+  },
+  {
+    "id": "0003206_final_none_371220",
+    "base_id": "0003206",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003206.png",
+    "image_path_relative": "extra_images/0004000/0003206.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 133.2510099261311,
+    "brightness_zscore": 0.8559809912095193
+  },
+  {
+    "id": "0003209_final_none_731351",
+    "base_id": "0003209",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003209.png",
+    "image_path_relative": "extra_images/0004000/0003209.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 138.86843674843675,
+    "brightness_zscore": 1.0284467559830568
+  },
+  {
+    "id": "0003213_final_none_595610",
+    "base_id": "0003213",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003213.png",
+    "image_path_relative": "extra_images/0004000/0003213.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows fairly dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "brightness": 30.78366242748773,
+    "brightness_zscore": 2.2899628741376943
+  },
+  {
+    "id": "0003234_final_none_823981",
+    "base_id": "0003234",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003234.png",
+    "image_path_relative": "extra_images/0004000/0003234.png",
+    "pred_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "output": "I find 2 distortions present: exposure shift, JPEG compression. Corruption order: JPEG compression \u2192 exposure shift. Restoration order (reverse): exposure shift \u2192 JPEG compression. This image shows 2 combined issues: a bit dark exposure shift (gamma\u22481.74), very slight JPEG compression (quality 85). Fix these in this order: (1) apply 'lut' to correct the a bit dark exposure shift (gamma\u22481.74); (2) use 'bilateral_d9' to handle the very slight JPEG compression (quality 85).",
+    "brightness": 48.48902398426855,
+    "brightness_zscore": 1.7463743561071434
+  },
+  {
+    "id": "0003238_final_none_178529",
+    "base_id": "0003238",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003238.png",
+    "image_path_relative": "extra_images/0004000/0003238.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22480.76). Fix it using 'lut'.",
+    "brightness": 126.93937427912341,
+    "brightness_zscore": 0.6622016856187942
+  },
+  {
+    "id": "0003243_final_none_594741",
+    "base_id": "0003243",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003243.png",
+    "image_path_relative": "extra_images/0004000/0003243.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32). Apply 'lut' to correct it.",
+    "brightness": 80.02956193893083,
+    "brightness_zscore": 0.7780194185546276
+  },
+  {
+    "id": "0003244_final_none_726209",
+    "base_id": "0003244",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003244.png",
+    "image_path_relative": "extra_images/0004000/0003244.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Fix it using 'lut'.",
+    "brightness": 127.38356979850012,
+    "brightness_zscore": 0.6758393390109284
+  },
+  {
+    "id": "0003262_final_none_654681",
+    "base_id": "0003262",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003262.png",
+    "image_path_relative": "extra_images/0004000/0003262.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 64.86815303392532,
+    "brightness_zscore": 1.2435037167146261
+  },
+  {
+    "id": "0003263_final_none_476",
+    "base_id": "0003263",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003263.png",
+    "image_path_relative": "extra_images/0004000/0003263.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 125.94753711201079,
+    "brightness_zscore": 0.6317503845217046
+  },
+  {
+    "id": "0003264_final_none_556152",
+    "base_id": "0003264",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003264.png",
+    "image_path_relative": "extra_images/0004000/0003264.png",
+    "pred_types": [
+      "noise"
+    ],
+    "output": "I find 1 distortion present: Gaussian noise. This photo shows very mild Gaussian noise (sigma\u224810). Fix it using 'bilateral_d21'.",
+    "brightness": 91.69368652281175,
+    "brightness_zscore": 0.4199084488157885
+  },
+  {
+    "id": "0003277_final_none_919305",
+    "base_id": "0003277",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003277.png",
+    "image_path_relative": "extra_images/0004000/0003277.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 121.86853475364505,
+    "brightness_zscore": 0.5065171979574928
+  },
+  {
+    "id": "0003278_final_none_678532",
+    "base_id": "0003278",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003278.png",
+    "image_path_relative": "extra_images/0004000/0003278.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows noticeably bright exposure shift (gamma\u22480.44). Apply 'lut' to correct it.",
+    "brightness": 192.47669875987484,
+    "brightness_zscore": 2.6743230973125964
+  },
+  {
+    "id": "0003279_final_none_169206",
+    "base_id": "0003279",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003279.png",
+    "image_path_relative": "extra_images/0004000/0003279.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 184.8706905601747,
+    "brightness_zscore": 2.4408040747191397
+  },
+  {
+    "id": "0003286_final_none_76209",
+    "base_id": "0003286",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003286.png",
+    "image_path_relative": "extra_images/0004000/0003286.png",
+    "pred_types": [
+      "gamma",
+      "jpeg",
+      "noise"
+    ],
+    "output": "I find 3 distortions present: exposure shift, JPEG compression, Gaussian noise. Corruption order: exposure shift \u2192 JPEG compression \u2192 Gaussian noise. Restoration order (reverse): Gaussian noise \u2192 JPEG compression \u2192 exposure shift. This image shows 3 combined issues: very mild Gaussian noise (sigma\u224810), very mild JPEG compression (quality 85), a bit dark exposure shift (gamma\u22481.74). To restore it, follow these steps in order: (1) fix the very mild Gaussian noise (sigma\u224810) using 'bilateral_d21'; (2) use 'bilateral_d3' to handle the very mild JPEG compression (quality 85); (3) apply 'lut' to correct the a bit dark exposure shift (gamma\u22481.74).",
+    "brightness": 93.31402855524456,
+    "brightness_zscore": 0.37016084432389174
+  },
+  {
+    "id": "0003291_final_none_556269",
+    "base_id": "0003291",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003291.png",
+    "image_path_relative": "extra_images/0004000/0003291.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows noticeably dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "brightness": 48.98364710538218,
+    "brightness_zscore": 1.7311884787373117
+  },
+  {
+    "id": "0003316_final_none_239187",
+    "base_id": "0003316",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003316.png",
+    "image_path_relative": "extra_images/0004000/0003316.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32). Apply 'lut' to correct it.",
+    "brightness": 167.682160040622,
+    "brightness_zscore": 1.913083259626936
+  },
+  {
+    "id": "0003317_final_none_110143",
+    "base_id": "0003317",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003317.png",
+    "image_path_relative": "extra_images/0004000/0003317.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 159.35880892222133,
+    "brightness_zscore": 1.657540435212455
+  },
+  {
+    "id": "0003328_final_none_25048",
+    "base_id": "0003328",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003328.png",
+    "image_path_relative": "extra_images/0004000/0003328.png",
+    "pred_types": [
+      "noise"
+    ],
+    "output": "I find 1 distortion present: Gaussian noise. This photo shows very mild Gaussian noise (sigma\u224810). Fix it using 'bilateral_d21'.",
+    "brightness": 110.01810660770313,
+    "brightness_zscore": 0.1426863519608448
+  },
+  {
+    "id": "0003333_final_none_262531",
+    "base_id": "0003333",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003333.png",
+    "image_path_relative": "extra_images/0004000/0003333.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Fix it using 'lut'.",
+    "brightness": 138.05593421353453,
+    "brightness_zscore": 1.0035013716469534
+  },
+  {
+    "id": "0003346_final_none_755864",
+    "base_id": "0003346",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003346.png",
+    "image_path_relative": "extra_images/0004000/0003346.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Fix it using 'lut'.",
+    "brightness": 128.60506375752917,
+    "brightness_zscore": 0.7133415435743576
+  },
+  {
+    "id": "0003359_final_none_149351",
+    "base_id": "0003359",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003359.png",
+    "image_path_relative": "extra_images/0004000/0003359.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22480.76). Apply 'lut' to correct it.",
+    "brightness": 107.836925,
+    "brightness_zscore": 0.0757198981053597
+  },
+  {
+    "id": "0003375_final_none_709073",
+    "base_id": "0003375",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003375.png",
+    "image_path_relative": "extra_images/0004000/0003375.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "This image has 1 distortion: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 107.37871984551397,
+    "brightness_zscore": 0.06165212207705115
+  },
+  {
+    "id": "0003376_final_none_286639",
+    "base_id": "0003376",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003376.png",
+    "image_path_relative": "extra_images/0004000/0003376.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22480.76). Apply 'lut' to correct it.",
+    "brightness": 127.03576841683825,
+    "brightness_zscore": 0.6651611703093046
+  },
+  {
+    "id": "0003377_final_none_203193",
+    "base_id": "0003377",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003377.png",
+    "image_path_relative": "extra_images/0004000/0003377.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32). Apply 'lut' to correct it.",
+    "brightness": 180.87731157277724,
+    "brightness_zscore": 2.3181996896727153
+  },
+  {
+    "id": "0003381_final_none_229033",
+    "base_id": "0003381",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003381.png",
+    "image_path_relative": "extra_images/0004000/0003381.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32). Apply 'lut' to correct it.",
+    "brightness": 84.00361121906982,
+    "brightness_zscore": 0.6560084925510409
+  },
+  {
+    "id": "0003382_final_none_701894",
+    "base_id": "0003382",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003382.png",
+    "image_path_relative": "extra_images/0004000/0003382.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32). Apply 'lut' to correct it.",
+    "brightness": 121.87854451262571,
+    "brightness_zscore": 0.5068245167339375
+  },
+  {
+    "id": "0003386_final_none_6156",
+    "base_id": "0003386",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003386.png",
+    "image_path_relative": "extra_images/0004000/0003386.png",
+    "pred_types": [
+      "jpeg"
+    ],
+    "output": "I find 1 distortion present: JPEG compression. This photo shows very mild JPEG compression (quality 85). Fix it using 'bilateral_d3'.",
+    "brightness": 100.55059102794925,
+    "brightness_zscore": 0.14798451329796572
+  },
+  {
+    "id": "0003389_final_none_893271",
+    "base_id": "0003389",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003389.png",
+    "image_path_relative": "extra_images/0004000/0003389.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22480.76). Apply 'lut' to correct it.",
+    "brightness": 122.19653589993503,
+    "brightness_zscore": 0.5165874615018036
+  },
+  {
+    "id": "0003410_final_none_736954",
+    "base_id": "0003410",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003410.png",
+    "image_path_relative": "extra_images/0004000/0003410.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 114.05560204421873,
+    "brightness_zscore": 0.26664519650926827
+  },
+  {
+    "id": "0003412_final_none_829140",
+    "base_id": "0003412",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003412.png",
+    "image_path_relative": "extra_images/0004000/0003412.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 138.26880177875245,
+    "brightness_zscore": 1.010036813690455
+  },
+  {
+    "id": "0003416_final_none_829759",
+    "base_id": "0003416",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003416.png",
+    "image_path_relative": "extra_images/0004000/0003416.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 111.83370487834773,
+    "brightness_zscore": 0.19842869701905969
+  },
+  {
+    "id": "0003431_final_none_421279",
+    "base_id": "0003431",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003431.png",
+    "image_path_relative": "extra_images/0004000/0003431.png",
+    "pred_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "output": "I can identify 2 distortions here: exposure shift, JPEG compression. Corruption order: JPEG compression \u2192 exposure shift. Restoration order (reverse): exposure shift \u2192 JPEG compression. This image shows 2 combined issues: noticeably dark exposure shift (gamma\u22482.3), fairly noticeable JPEG compression (quality 25). Restoration pipeline, in order: (1) apply 'lut' to correct the noticeably dark exposure shift (gamma\u22482.3); (2) use 'nlm_tw5_sw11' to handle the fairly noticeable JPEG compression (quality 25).",
+    "brightness": 43.89026251526251,
+    "brightness_zscore": 1.8875651430727787
+  },
+  {
+    "id": "0003435_final_none_487063",
+    "base_id": "0003435",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003435.png",
+    "image_path_relative": "extra_images/0004000/0003435.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows fairly bright exposure shift (gamma\u22480.44). Fix it using 'lut'.",
+    "brightness": 177.38914465525792,
+    "brightness_zscore": 2.211106283008487
+  },
+  {
+    "id": "0003442_final_none_802919",
+    "base_id": "0003442",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003442.png",
+    "image_path_relative": "extra_images/0004000/0003442.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32). Apply 'lut' to correct it.",
+    "brightness": 105.91358309066642,
+    "brightness_zscore": 0.016669616934440756
+  },
+  {
+    "id": "0003448_final_none_472412",
+    "base_id": "0003448",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003448.png",
+    "image_path_relative": "extra_images/0004000/0003448.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 130.99226734590238,
+    "brightness_zscore": 0.7866332669136096
+  },
+  {
+    "id": "0003453_final_none_625343",
+    "base_id": "0003453",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003453.png",
+    "image_path_relative": "extra_images/0004000/0003453.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22480.76). Apply 'lut' to correct it.",
+    "brightness": 169.75547642739886,
+    "brightness_zscore": 1.9767380445621165
+  },
+  {
+    "id": "0003456_final_none_223517",
+    "base_id": "0003456",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003456.png",
+    "image_path_relative": "extra_images/0004000/0003456.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22480.76). Apply 'lut' to correct it.",
+    "brightness": 117.79673493975903,
+    "brightness_zscore": 0.3815051433067541
+  },
+  {
+    "id": "0003471_final_none_407032",
+    "base_id": "0003471",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003471.png",
+    "image_path_relative": "extra_images/0004000/0003471.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 132.28348464042315,
+    "brightness_zscore": 0.8262761114459289
+  },
+  {
+    "id": "0003472_final_none_88057",
+    "base_id": "0003472",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003472.png",
+    "image_path_relative": "extra_images/0004000/0003472.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 142.91513007054672,
+    "brightness_zscore": 1.1526879932396565
+  },
+  {
+    "id": "0003476_final_none_839503",
+    "base_id": "0003476",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003476.png",
+    "image_path_relative": "extra_images/0004000/0003476.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 71.09885715386987,
+    "brightness_zscore": 1.0522091640456144
+  },
+  {
+    "id": "0003481_final_none_745536",
+    "base_id": "0003481",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003481.png",
+    "image_path_relative": "extra_images/0004000/0003481.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 85.36320601851853,
+    "brightness_zscore": 0.6142663276263536
+  },
+  {
+    "id": "0003492_final_none_23741",
+    "base_id": "0003492",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003492.png",
+    "image_path_relative": "extra_images/0004000/0003492.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32). Fix it using 'lut'.",
+    "brightness": 84.29617001338688,
+    "brightness_zscore": 0.647026377109365
+  },
+  {
+    "id": "0003498_final_none_333560",
+    "base_id": "0003498",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003498.png",
+    "image_path_relative": "extra_images/0004000/0003498.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 132.3282857510288,
+    "brightness_zscore": 0.8276515913672029
+  },
+  {
+    "id": "0003515_final_none_699975",
+    "base_id": "0003515",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003515.png",
+    "image_path_relative": "extra_images/0004000/0003515.png",
+    "pred_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "output": "I find 2 distortions present: exposure shift, JPEG compression. Corruption order: JPEG compression \u2192 exposure shift. Restoration order (reverse): exposure shift \u2192 JPEG compression. This image shows 2 combined issues: barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32), very slight JPEG compression (quality 85). To restore it, follow these steps in order: (1) fix the barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32) using 'lut'; (2) use 'bilateral_d3' to handle the very slight JPEG compression (quality 85).",
+    "brightness": 103.35151909722222,
+    "brightness_zscore": 0.061990655821321475
+  },
+  {
+    "id": "0003520_final_none_370480",
+    "base_id": "0003520",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003520.png",
+    "image_path_relative": "extra_images/0004000/0003520.png",
+    "pred_types": [
+      "jpeg"
+    ],
+    "output": "I find 1 distortion present: JPEG compression. This photo shows hard to notice, may not be genuine JPEG compression (quality 95). Fix it using 'bilateral_d9'.",
+    "brightness": 108.2951478539115,
+    "brightness_zscore": 0.08978821753993749
+  },
+  {
+    "id": "0003528_final_none_670929",
+    "base_id": "0003528",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003528.png",
+    "image_path_relative": "extra_images/0004000/0003528.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32). Apply 'lut' to correct it.",
+    "brightness": 92.17990896921017,
+    "brightness_zscore": 0.4049804882529223
+  },
+  {
+    "id": "0003536_final_none_747059",
+    "base_id": "0003536",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003536.png",
+    "image_path_relative": "extra_images/0004000/0003536.png",
+    "pred_types": [
+      "jpeg"
+    ],
+    "output": "I find 1 distortion present: JPEG compression. This photo shows very mild JPEG compression (quality 85). Fix it using 'bilateral_d9'.",
+    "brightness": 117.91462761674718,
+    "brightness_zscore": 0.3851246743377993
+  },
+  {
+    "id": "0003543_final_none_194138",
+    "base_id": "0003543",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003543.png",
+    "image_path_relative": "extra_images/0004000/0003543.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 131.17693604849725,
+    "brightness_zscore": 0.7923029498539012
+  },
+  {
+    "id": "0003553_final_none_975287",
+    "base_id": "0003553",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003553.png",
+    "image_path_relative": "extra_images/0004000/0003553.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 151.6659328247166,
+    "brightness_zscore": 1.4213544017431918
+  },
+  {
+    "id": "0003556_final_none_51786",
+    "base_id": "0003556",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003556.png",
+    "image_path_relative": "extra_images/0004000/0003556.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22480.76). Apply 'lut' to correct it.",
+    "brightness": 139.32480827362292,
+    "brightness_zscore": 1.0424582360791683
+  },
+  {
+    "id": "0003560_final_none_145060",
+    "base_id": "0003560",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003560.png",
+    "image_path_relative": "extra_images/0004000/0003560.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 104.13876663773148,
+    "brightness_zscore": 0.03782064819418382
+  },
+  {
+    "id": "0003563_final_none_402755",
+    "base_id": "0003563",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003563.png",
+    "image_path_relative": "extra_images/0004000/0003563.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Fix it using 'lut'.",
+    "brightness": 140.231904342723,
+    "brightness_zscore": 1.0703078231283865
+  },
+  {
+    "id": "0003565_final_none_28664",
+    "base_id": "0003565",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003565.png",
+    "image_path_relative": "extra_images/0004000/0003565.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 36.15655259851688,
+    "brightness_zscore": 2.125004853018261
+  },
+  {
+    "id": "0003572_final_none_618628",
+    "base_id": "0003572",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003572.png",
+    "image_path_relative": "extra_images/0004000/0003572.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows noticeably dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "brightness": 51.78524966532798,
+    "brightness_zscore": 1.645173913104887
+  },
+  {
+    "id": "0003578_final_none_12927",
+    "base_id": "0003578",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003578.png",
+    "image_path_relative": "extra_images/0004000/0003578.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22480.76). Apply 'lut' to correct it.",
+    "brightness": 120.42161835748793,
+    "brightness_zscore": 0.4620940927314982
+  },
+  {
+    "id": "0003579_final_none_486166",
+    "base_id": "0003579",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003579.png",
+    "image_path_relative": "extra_images/0004000/0003579.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows faintly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 138.4056986239712,
+    "brightness_zscore": 1.0142398090925466
+  },
+  {
+    "id": "0003580_final_none_709066",
+    "base_id": "0003580",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003580.png",
+    "image_path_relative": "extra_images/0004000/0003580.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 176.56682736606555,
+    "brightness_zscore": 2.1858595669135092
+  },
+  {
+    "id": "0003581_final_none_375476",
+    "base_id": "0003581",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003581.png",
+    "image_path_relative": "extra_images/0004000/0003581.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22480.76). Apply 'lut' to correct it.",
+    "brightness": 159.3123862283834,
+    "brightness_zscore": 1.6561151695794758
+  },
+  {
+    "id": "0003585_final_none_694328",
+    "base_id": "0003585",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003585.png",
+    "image_path_relative": "extra_images/0004000/0003585.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 163.4831613297325,
+    "brightness_zscore": 1.7841659551627158
+  },
+  {
+    "id": "0003586_final_none_549660",
+    "base_id": "0003586",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003586.png",
+    "image_path_relative": "extra_images/0004000/0003586.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 73.6428929787126,
+    "brightness_zscore": 0.9741023906025575
+  },
+  {
+    "id": "0003590_final_none_309869",
+    "base_id": "0003590",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003590.png",
+    "image_path_relative": "extra_images/0004000/0003590.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Fix it using 'lut'.",
+    "brightness": 138.11604777520577,
+    "brightness_zscore": 1.0053469731500697
+  },
+  {
+    "id": "0003609_final_none_561303",
+    "base_id": "0003609",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003609.png",
+    "image_path_relative": "extra_images/0004000/0003609.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 39.49346049240321,
+    "brightness_zscore": 2.0225553881471288
+  },
+  {
+    "id": "0003629_final_none_567409",
+    "base_id": "0003629",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003629.png",
+    "image_path_relative": "extra_images/0004000/0003629.png",
+    "pred_types": [
+      "noise"
+    ],
+    "output": "I find 1 distortion present: Gaussian noise. This photo shows very mild Gaussian noise (sigma\u224810). Fix it using 'bilateral_d21'.",
+    "brightness": 69.32208943300083,
+    "brightness_zscore": 1.1067593368378683
+  },
+  {
+    "id": "0003644_final_none_202547",
+    "base_id": "0003644",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003644.png",
+    "image_path_relative": "extra_images/0004000/0003644.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows distinctly dark exposure shift (gamma\u22483.03). Fix it using 'lut'.",
+    "brightness": 54.85521629050926,
+    "brightness_zscore": 1.5509200565635375
+  },
+  {
+    "id": "0003655_final_none_342628",
+    "base_id": "0003655",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003655.png",
+    "image_path_relative": "extra_images/0004000/0003655.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows a bit dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 144.64457596253902,
+    "brightness_zscore": 1.2057852952307628
+  },
+  {
+    "id": "0003656_final_none_158933",
+    "base_id": "0003656",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003656.png",
+    "image_path_relative": "extra_images/0004000/0003656.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 105.82370519713261,
+    "brightness_zscore": 0.0139101934234851
+  },
+  {
+    "id": "0003658_final_none_677727",
+    "base_id": "0003658",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003658.png",
+    "image_path_relative": "extra_images/0004000/0003658.png",
+    "pred_types": [
+      "jpeg"
+    ],
+    "output": "I find 1 distortion present: JPEG compression. This photo shows very mild JPEG compression (quality 85). Fix it using 'bilateral_d3'.",
+    "brightness": 137.00304580896687,
+    "brightness_zscore": 0.9711756806038758
+  },
+  {
+    "id": "0003659_final_none_130754",
+    "base_id": "0003659",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003659.png",
+    "image_path_relative": "extra_images/0004000/0003659.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows noticeably dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "brightness": 52.21784423932861,
+    "brightness_zscore": 1.6318924309597793
+  },
+  {
+    "id": "0003669_final_none_125458",
+    "base_id": "0003669",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003669.png",
+    "image_path_relative": "extra_images/0004000/0003669.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 85.03774956597222,
+    "brightness_zscore": 0.6242584641978528
+  },
+  {
+    "id": "0003674_final_none_484002",
+    "base_id": "0003674",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003674.png",
+    "image_path_relative": "extra_images/0004000/0003674.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 42.44755229766804,
+    "brightness_zscore": 1.9318591105591056
+  },
+  {
+    "id": "0003678_final_none_364346",
+    "base_id": "0003678",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003678.png",
+    "image_path_relative": "extra_images/0004000/0003678.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 171.47502676534936,
+    "brightness_zscore": 2.0295315340871842
+  },
+  {
+    "id": "0003689_final_none_216786",
+    "base_id": "0003689",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003689.png",
+    "image_path_relative": "extra_images/0004000/0003689.png",
+    "pred_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "output": "I can identify 2 distortions here: exposure shift, JPEG compression. Corruption order: JPEG compression \u2192 exposure shift. Restoration order (reverse): exposure shift \u2192 JPEG compression. This image shows 2 combined issues: hard to tell, exposure looks close to normal exposure shift (gamma\u22480.76), light JPEG compression (quality 70). Recommended repair sequence: (1) use 'lut' to handle the hard to tell, exposure looks close to normal exposure shift (gamma\u22480.76); (2) use 'bilateral_d3' to handle the light JPEG compression (quality 70).",
+    "brightness": 133.47115087844256,
+    "brightness_zscore": 0.8627397401704513
+  },
+  {
+    "id": "0003697_final_none_249243",
+    "base_id": "0003697",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003697.png",
+    "image_path_relative": "extra_images/0004000/0003697.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows faintly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 36.750573884961156,
+    "brightness_zscore": 2.1067672615552855
+  },
+  {
+    "id": "0003701_final_none_717679",
+    "base_id": "0003701",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003701.png",
+    "image_path_relative": "extra_images/0004000/0003701.png",
+    "pred_types": [
+      "noise"
+    ],
+    "output": "I find 1 distortion present: Gaussian noise. This photo shows very mild Gaussian noise (sigma\u224810). Fix it using 'bilateral_d21'.",
+    "brightness": 122.38013488848885,
+    "brightness_zscore": 0.5222243021717791
+  },
+  {
+    "id": "0003703_final_none_656184",
+    "base_id": "0003703",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003703.png",
+    "image_path_relative": "extra_images/0004000/0003703.png",
+    "pred_types": [
+      "gamma",
+      "noise"
+    ],
+    "output": "I can identify 2 distortions here: exposure shift, Gaussian noise. Corruption order: Gaussian noise \u2192 exposure shift. Restoration order (reverse): exposure shift \u2192 Gaussian noise. This image shows 2 combined issues: barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32), light Gaussian noise (sigma\u224820). Fix these in this order: (1) fix the barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32) using 'lut'; (2) use 'bilateral_d9' to handle the light Gaussian noise (sigma\u224820).",
+    "brightness": 105.52046673748063,
+    "brightness_zscore": 0.004600191796946343
+  },
+  {
+    "id": "0003705_final_none_885671",
+    "base_id": "0003705",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003705.png",
+    "image_path_relative": "extra_images/0004000/0003705.png",
+    "pred_types": [
+      "noise"
+    ],
+    "output": "I find 1 distortion present: Gaussian noise. This photo shows very mild Gaussian noise (sigma\u224810). Fix it using 'bilateral_d21'.",
+    "brightness": 108.53390599087894,
+    "brightness_zscore": 0.09711854973482886
+  },
+  {
+    "id": "0003710_final_none_834248",
+    "base_id": "0003710",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003710.png",
+    "image_path_relative": "extra_images/0004000/0003710.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 54.71219551151347,
+    "brightness_zscore": 1.5553110684642306
+  },
+  {
+    "id": "0003712_final_none_118195",
+    "base_id": "0003712",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003712.png",
+    "image_path_relative": "extra_images/0004000/0003712.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows fairly dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "brightness": 40.27464514210391,
+    "brightness_zscore": 1.9985715228825198
+  },
+  {
+    "id": "0003714_final_none_663585",
+    "base_id": "0003714",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003714.png",
+    "image_path_relative": "extra_images/0004000/0003714.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 181.59729287790697,
+    "brightness_zscore": 2.3403044950114844
+  },
+  {
+    "id": "0003722_final_none_587602",
+    "base_id": "0003722",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003722.png",
+    "image_path_relative": "extra_images/0004000/0003722.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32). Apply 'lut' to correct it.",
+    "brightness": 93.67307782796914,
+    "brightness_zscore": 0.3591373438190093
+  },
+  {
+    "id": "0003725_final_none_561545",
+    "base_id": "0003725",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003725.png",
+    "image_path_relative": "extra_images/0004000/0003725.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows moderately dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "brightness": 147.2308533379058,
+    "brightness_zscore": 1.2851889651972288
+  },
+  {
+    "id": "0003726_final_none_917549",
+    "base_id": "0003726",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003726.png",
+    "image_path_relative": "extra_images/0004000/0003726.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 129.0872321167555,
+    "brightness_zscore": 0.7281450358946083
+  },
+  {
+    "id": "0003730_final_none_886753",
+    "base_id": "0003730",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003730.png",
+    "image_path_relative": "extra_images/0004000/0003730.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows noticeably bright exposure shift (gamma\u22480.44). Apply 'lut' to correct it.",
+    "brightness": 141.35513972426426,
+    "brightness_zscore": 1.1047933011285607
+  },
+  {
+    "id": "0003747_final_none_451586",
+    "base_id": "0003747",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003747.png",
+    "image_path_relative": "extra_images/0004000/0003747.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 103.92931604831475,
+    "brightness_zscore": 0.04425118253467362
+  },
+  {
+    "id": "0003751_final_none_790033",
+    "base_id": "0003751",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003751.png",
+    "image_path_relative": "extra_images/0004000/0003751.png",
+    "pred_types": [
+      "jpeg"
+    ],
+    "output": "I find 1 distortion present: JPEG compression. This photo shows very slight JPEG compression (quality 85). Fix it using 'bilateral_d3'.",
+    "brightness": 47.25269890780473,
+    "brightness_zscore": 1.7843319043878558
+  },
+  {
+    "id": "0003760_final_none_47825",
+    "base_id": "0003760",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003760.png",
+    "image_path_relative": "extra_images/0004000/0003760.png",
+    "pred_types": [
+      "gamma",
+      "jpeg",
+      "noise"
+    ],
+    "output": "I can identify 3 distortions here: exposure shift, JPEG compression, Gaussian noise. Corruption order: JPEG compression \u2192 Gaussian noise \u2192 exposure shift. Restoration order (reverse): exposure shift \u2192 Gaussian noise \u2192 JPEG compression. This image shows 3 combined issues: faintly dark exposure shift (gamma\u22481.74), light Gaussian noise (sigma\u224820), light JPEG compression (quality 70). Fix these in this order: (1) apply 'lut' to correct the faintly dark exposure shift (gamma\u22481.74); (2) address the light Gaussian noise (sigma\u224820) via 'bilateral_d9'; (3) fix the light JPEG compression (quality 70) using 'bilateral_d3'.",
+    "brightness": 118.46781824266765,
+    "brightness_zscore": 0.40210868630322183
+  },
+  {
+    "id": "0003761_final_none_702867",
+    "base_id": "0003761",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003761.png",
+    "image_path_relative": "extra_images/0004000/0003761.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32). Apply 'lut' to correct it.",
+    "brightness": 113.67831080652326,
+    "brightness_zscore": 0.2550616327335684
+  },
+  {
+    "id": "0003762_final_none_36776",
+    "base_id": "0003762",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003762.png",
+    "image_path_relative": "extra_images/0004000/0003762.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows faintly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 79.28419931639628,
+    "brightness_zscore": 0.8009034789608239
+  },
+  {
+    "id": "0003766_final_none_828546",
+    "base_id": "0003766",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003766.png",
+    "image_path_relative": "extra_images/0004000/0003766.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 114.8620591436248,
+    "brightness_zscore": 0.2914049743943729
+  },
+  {
+    "id": "0003768_final_none_251771",
+    "base_id": "0003768",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003768.png",
+    "image_path_relative": "extra_images/0004000/0003768.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 83.50029646706132,
+    "brightness_zscore": 0.6714612196399399
+  },
+  {
+    "id": "0003770_final_none_743338",
+    "base_id": "0003770",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003770.png",
+    "image_path_relative": "extra_images/0004000/0003770.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 83.23919253261359,
+    "brightness_zscore": 0.6794776106254169
+  },
+  {
+    "id": "0003788_final_none_98927",
+    "base_id": "0003788",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003788.png",
+    "image_path_relative": "extra_images/0004000/0003788.png",
+    "pred_types": [
+      "jpeg"
+    ],
+    "output": "I find 1 distortion present: JPEG compression. This photo shows very mild JPEG compression (quality 85). Fix it using 'bilateral_d3'.",
+    "brightness": 101.70848589461939,
+    "brightness_zscore": 0.11243492270701025
+  },
+  {
+    "id": "0003790_final_none_87903",
+    "base_id": "0003790",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003790.png",
+    "image_path_relative": "extra_images/0004000/0003790.png",
+    "pred_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "output": "I find 2 distortions present: exposure shift, JPEG compression. Corruption order: JPEG compression \u2192 exposure shift. Restoration order (reverse): exposure shift \u2192 JPEG compression. This photo has 2 distortions at once: barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32), very slight JPEG compression (quality 85). Fix these in this order: (1) apply 'lut' to correct the barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32); (2) fix the very slight JPEG compression (quality 85) using 'bilateral_d9'.",
+    "brightness": 106.88113922356091,
+    "brightness_zscore": 0.0463754437657519
+  },
+  {
+    "id": "0003795_final_none_135025",
+    "base_id": "0003795",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003795.png",
+    "image_path_relative": "extra_images/0004000/0003795.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 31.199639009052312,
+    "brightness_zscore": 2.2771915961955327
+  },
+  {
+    "id": "0003796_final_none_68341",
+    "base_id": "0003796",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003796.png",
+    "image_path_relative": "extra_images/0004000/0003796.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows noticeably dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "brightness": 8.075079345867291,
+    "brightness_zscore": 2.9871598776738417
+  },
+  {
+    "id": "0003803_final_none_184514",
+    "base_id": "0003803",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003803.png",
+    "image_path_relative": "extra_images/0004000/0003803.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 92.81378205128205,
+    "brightness_zscore": 0.38551937031992284
+  },
+  {
+    "id": "0003811_final_none_79752",
+    "base_id": "0003811",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003811.png",
+    "image_path_relative": "extra_images/0004000/0003811.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 52.329321338383835,
+    "brightness_zscore": 1.6284698704616254
+  },
+  {
+    "id": "0003815_final_none_406467",
+    "base_id": "0003815",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003815.png",
+    "image_path_relative": "extra_images/0004000/0003815.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 52.76759533811053,
+    "brightness_zscore": 1.6150140190666271
+  },
+  {
+    "id": "0003823_final_none_262981",
+    "base_id": "0003823",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003823.png",
+    "image_path_relative": "extra_images/0004000/0003823.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 152.6505665580704,
+    "brightness_zscore": 1.451584543624237
+  },
+  {
+    "id": "0003828_final_none_583525",
+    "base_id": "0003828",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003828.png",
+    "image_path_relative": "extra_images/0004000/0003828.png",
+    "pred_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "output": "I find 2 distortions present: exposure shift, JPEG compression. Corruption order: JPEG compression \u2192 exposure shift. Restoration order (reverse): exposure shift \u2192 JPEG compression. This image shows 2 combined issues: slightly dark exposure shift (gamma\u22481.74), very slight JPEG compression (quality 85). To restore it, follow these steps in order: (1) fix the slightly dark exposure shift (gamma\u22481.74) using 'lut'; (2) use 'bilateral_d3' to handle the very slight JPEG compression (quality 85).",
+    "brightness": 46.55631340343086,
+    "brightness_zscore": 1.805712273440843
+  },
+  {
+    "id": "0003830_final_none_246996",
+    "base_id": "0003830",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003830.png",
+    "image_path_relative": "extra_images/0004000/0003830.png",
+    "pred_types": [
+      "noise"
+    ],
+    "output": "I can identify 1 distortion here: Gaussian noise. This photo shows faint Gaussian noise (sigma\u224820). Restore using 'bilateral_d21'.",
+    "brightness": 39.387069488333495,
+    "brightness_zscore": 2.0258217957857734
+  },
+  {
+    "id": "0003839_final_none_895439",
+    "base_id": "0003839",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003839.png",
+    "image_path_relative": "extra_images/0004000/0003839.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 189.54836168872086,
+    "brightness_zscore": 2.584417539400232
+  },
+  {
+    "id": "0003863_final_none_69482",
+    "base_id": "0003863",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003863.png",
+    "image_path_relative": "extra_images/0004000/0003863.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows a bit dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 65.77676424476762,
+    "brightness_zscore": 1.2156076119113581
+  },
+  {
+    "id": "0003864_final_none_891394",
+    "base_id": "0003864",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003864.png",
+    "image_path_relative": "extra_images/0004000/0003864.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22481.32). Apply 'lut' to correct it.",
+    "brightness": 49.09590428380187,
+    "brightness_zscore": 1.7277419683082673
+  },
+  {
+    "id": "0003874_final_none_748335",
+    "base_id": "0003874",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003874.png",
+    "image_path_relative": "extra_images/0004000/0003874.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 147.6717418995303,
+    "brightness_zscore": 1.2987250886512167
+  },
+  {
+    "id": "0003881_final_none_863777",
+    "base_id": "0003881",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003881.png",
+    "image_path_relative": "extra_images/0004000/0003881.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 83.80352832177343,
+    "brightness_zscore": 0.6621514207977083
+  },
+  {
+    "id": "0003888_final_none_50600",
+    "base_id": "0003888",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003888.png",
+    "image_path_relative": "extra_images/0004000/0003888.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows faintly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 42.5636655011655,
+    "brightness_zscore": 1.9282942127731697
+  },
+  {
+    "id": "0003894_final_none_893894",
+    "base_id": "0003894",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003894.png",
+    "image_path_relative": "extra_images/0004000/0003894.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 43.77603973120277,
+    "brightness_zscore": 1.891072001360492
+  },
+  {
+    "id": "0003897_final_none_415785",
+    "base_id": "0003897",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003897.png",
+    "image_path_relative": "extra_images/0004000/0003897.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 56.891141477499005,
+    "brightness_zscore": 1.4884132530923044
+  },
+  {
+    "id": "0003898_final_none_698705",
+    "base_id": "0003898",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003898.png",
+    "image_path_relative": "extra_images/0004000/0003898.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 38.34670845902463,
+    "brightness_zscore": 2.0577628724096595
+  },
+  {
+    "id": "0003901_final_none_888726",
+    "base_id": "0003901",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003901.png",
+    "image_path_relative": "extra_images/0004000/0003901.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows slightly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 66.82588587722671,
+    "brightness_zscore": 1.1833975679880349
+  },
+  {
+    "id": "0003905_final_none_243094",
+    "base_id": "0003905",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003905.png",
+    "image_path_relative": "extra_images/0004000/0003905.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 190.1054828042328,
+    "brightness_zscore": 2.6015222249257683
+  },
+  {
+    "id": "0003908_final_none_704951",
+    "base_id": "0003908",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003908.png",
+    "image_path_relative": "extra_images/0004000/0003908.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows barely noticeable \u2014 exposure seems about right exposure shift (gamma\u22480.76). Apply 'lut' to correct it.",
+    "brightness": 90.20805890227577,
+    "brightness_zscore": 0.4655200627894733
+  },
+  {
+    "id": "0003910_final_none_372648",
+    "base_id": "0003910",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003910.png",
+    "image_path_relative": "extra_images/0004000/0003910.png",
+    "pred_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "output": "I find 2 distortions present: exposure shift, JPEG compression. Corruption order: JPEG compression \u2192 exposure shift. Restoration order (reverse): exposure shift \u2192 JPEG compression. This image shows 2 combined issues: fairly dark exposure shift (gamma\u22482.3), very mild JPEG compression (quality 85). To restore it, follow these steps in order: (1) fix the fairly dark exposure shift (gamma\u22482.3) using 'lut'; (2) use 'bilateral_d5' to handle the very mild JPEG compression (quality 85).",
+    "brightness": 54.58224908280923,
+    "brightness_zscore": 1.5593006727643839
+  },
+  {
+    "id": "0003911_final_none_175419",
+    "base_id": "0003911",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003911.png",
+    "image_path_relative": "extra_images/0004000/0003911.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 52.033176854010186,
+    "brightness_zscore": 1.6375620734571603
+  },
+  {
+    "id": "0003921_final_none_164936",
+    "base_id": "0003921",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003921.png",
+    "image_path_relative": "extra_images/0004000/0003921.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 134.7284281687427,
+    "brightness_zscore": 0.9013405615541853
+  },
+  {
+    "id": "0003932_final_none_593451",
+    "base_id": "0003932",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003932.png",
+    "image_path_relative": "extra_images/0004000/0003932.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows faintly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 122.58181341719077,
+    "brightness_zscore": 0.5284162193593539
+  },
+  {
+    "id": "0003934_final_none_395774",
+    "base_id": "0003934",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003934.png",
+    "image_path_relative": "extra_images/0004000/0003934.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 83.17783229692965,
+    "brightness_zscore": 0.6813614874089814
+  },
+  {
+    "id": "0003935_final_none_616576",
+    "base_id": "0003935",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003935.png",
+    "image_path_relative": "extra_images/0004000/0003935.png",
+    "pred_types": [
+      "noise"
+    ],
+    "output": "I find 1 distortion present: Gaussian noise. This photo shows very mild Gaussian noise (sigma\u224810). Fix it using 'bilateral_d9'.",
+    "brightness": 126.01092261183786,
+    "brightness_zscore": 0.6336964407942705
+  },
+  {
+    "id": "0003948_final_none_79133",
+    "base_id": "0003948",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003948.png",
+    "image_path_relative": "extra_images/0004000/0003948.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 73.03999071915739,
+    "brightness_zscore": 0.9926126449533574
+  },
+  {
+    "id": "0003954_final_none_771802",
+    "base_id": "0003954",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003954.png",
+    "image_path_relative": "extra_images/0004000/0003954.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows noticeably dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "brightness": 76.74645754808799,
+    "brightness_zscore": 0.8788170128107224
+  },
+  {
+    "id": "0003955_final_none_112234",
+    "base_id": "0003955",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003955.png",
+    "image_path_relative": "extra_images/0004000/0003955.png",
+    "pred_types": [
+      "jpeg"
+    ],
+    "output": "I find 1 distortion present: JPEG compression. This photo shows very mild JPEG compression (quality 85). Fix it using 'bilateral_d3'.",
+    "brightness": 64.21761323804331,
+    "brightness_zscore": 1.2634765346900922
+  },
+  {
+    "id": "0003957_final_none_389358",
+    "base_id": "0003957",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003957.png",
+    "image_path_relative": "extra_images/0004000/0003957.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows faintly bright exposure shift (gamma\u22480.58). Apply 'lut' to correct it.",
+    "brightness": 174.9012969659337,
+    "brightness_zscore": 2.1347245929657017
+  },
+  {
+    "id": "0003963_final_none_140334",
+    "base_id": "0003963",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003963.png",
+    "image_path_relative": "extra_images/0004000/0003963.png",
+    "pred_types": [
+      "jpeg"
+    ],
+    "output": "I find 1 distortion present: JPEG compression. This photo shows very mild JPEG compression (quality 85). Apply 'bilateral_d3' to correct it.",
+    "brightness": 76.573298857368,
+    "brightness_zscore": 0.8841333163366756
+  },
+  {
+    "id": "0003970_final_none_463222",
+    "base_id": "0003970",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003970.png",
+    "image_path_relative": "extra_images/0004000/0003970.png",
+    "pred_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "output": "I can identify 2 distortions here: exposure shift, JPEG compression. Corruption order: exposure shift \u2192 JPEG compression. Restoration order (reverse): JPEG compression \u2192 exposure shift. This image shows 2 combined issues: very mild JPEG compression (quality 85), faintly bright exposure shift (gamma\u22480.58). To restore it, follow these steps in order: (1) apply 'bilateral_d9' to correct the very mild JPEG compression (quality 85); (2) fix the faintly bright exposure shift (gamma\u22480.58) using 'lut'.",
+    "brightness": 166.0787516436555,
+    "brightness_zscore": 1.8638555501836938
+  },
+  {
+    "id": "0003971_final_none_245989",
+    "base_id": "0003971",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003971.png",
+    "image_path_relative": "extra_images/0004000/0003971.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I find 1 distortion present: exposure shift. This photo shows faintly dark exposure shift (gamma\u22481.74). Apply 'lut' to correct it.",
+    "brightness": 37.85601352779539,
+    "brightness_zscore": 2.0728281468247904
+  },
+  {
+    "id": "0003975_final_none_432955",
+    "base_id": "0003975",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003975.png",
+    "image_path_relative": "extra_images/0004000/0003975.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "This image has 1 distortion: exposure shift. This photo shows slightly dark exposure shift (gamma\u22481.74). Fix it using 'lut'.",
+    "brightness": 66.07909504685408,
+    "brightness_zscore": 1.2063254771108844
+  },
+  {
+    "id": "0004000_final_none_400891",
+    "base_id": "0004000",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0004000.png",
+    "image_path_relative": "extra_images/0004000/0004000.png",
+    "pred_types": [
+      "gamma"
+    ],
+    "output": "I can identify 1 distortion here: exposure shift. This photo shows fairly dark exposure shift (gamma\u22482.3). Fix it using 'lut'.",
+    "brightness": 49.10915377808556,
+    "brightness_zscore": 1.7273351834516446
+  }
+]

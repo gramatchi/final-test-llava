@@ -1,0 +1,23 @@
+{
+  "gamma+jpeg": {
+    "n": 366,
+    "n_skipped": 0,
+    "mean_ssim_loss": 0.049597302015980026,
+    "median_ssim_loss": 0.03169199773558162,
+    "fraction_negligible_loss_lt_0.01": 0.3825136612021858
+  },
+  "gamma+noise": {
+    "n": 341,
+    "n_skipped": 0,
+    "mean_ssim_loss": 0.058521162864507134,
+    "median_ssim_loss": 0.03567081052964349,
+    "fraction_negligible_loss_lt_0.01": 0.2727272727272727
+  },
+  "jpeg+noise": {
+    "n": 293,
+    "n_skipped": 0,
+    "mean_ssim_loss": 0.040591886713983984,
+    "median_ssim_loss": 0.00515879941821451,
+    "fraction_negligible_loss_lt_0.01": 0.5597269624573379
+  }
+}

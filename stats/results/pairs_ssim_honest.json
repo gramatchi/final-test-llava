@@ -1,0 +1,7 @@
+{
+  "n_compared": 1000,
+  "n_skipped": 0,
+  "mean_ssim_loss": 0.05000175188184293,
+  "median_ssim_loss": 0.02670376039451594,
+  "fraction_negligible_loss_lt_0.01": 0.397
+}

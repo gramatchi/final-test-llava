@@ -1,0 +1,254 @@
+[
+  {
+    "id": "0003020_final_pair_jg_gj_161877",
+    "base_id": "0003020",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003020.png",
+    "image_path_relative": "extra_images/0004000/0003020.png",
+    "true_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "pred_types": [
+      "jpeg"
+    ],
+    "true_order": [
+      "jpeg",
+      "gamma"
+    ],
+    "pred_order": [
+      "jpeg"
+    ],
+    "ceiling_ssim": 0.8332465640240013,
+    "achieved_ssim": 0.3060973033256807,
+    "ssim_loss": 0.5271492606983206,
+    "output": "I can identify 1 distortion here: JPEG compression. This photo shows very heavy JPEG compression (quality 5). Fix it using 'bilateral_d5'."
+  },
+  {
+    "id": "0003710_final_pair_ng_gn_707140",
+    "base_id": "0003710",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003710.png",
+    "image_path_relative": "extra_images/0004000/0003710.png",
+    "true_types": [
+      "gamma",
+      "noise"
+    ],
+    "pred_types": [
+      "noise"
+    ],
+    "true_order": [
+      "noise",
+      "gamma"
+    ],
+    "pred_order": [
+      "noise"
+    ],
+    "ceiling_ssim": 0.8721533996291781,
+    "achieved_ssim": 0.35588469683982465,
+    "ssim_loss": 0.5162687027893536,
+    "output": "I can identify 1 distortion here: Gaussian noise. This photo shows fairly noticeable Gaussian noise (sigma\u224880). Fix it using 'bilateral_d3'."
+  },
+  {
+    "id": "0003277_final_pair_ng_gn_584148",
+    "base_id": "0003277",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003277.png",
+    "image_path_relative": "extra_images/0004000/0003277.png",
+    "true_types": [
+      "gamma",
+      "noise"
+    ],
+    "pred_types": [
+      "noise"
+    ],
+    "true_order": [
+      "noise",
+      "gamma"
+    ],
+    "pred_order": [
+      "noise"
+    ],
+    "ceiling_ssim": 0.832991897754347,
+    "achieved_ssim": 0.35024047619538035,
+    "ssim_loss": 0.48275142155896666,
+    "output": "I can identify 1 distortion here: Gaussian noise. This photo shows mild Gaussian noise (sigma\u224840). Fix it using 'nlm_tw5_sw11'."
+  },
+  {
+    "id": "0003712_final_pair_jn_nj_157538",
+    "base_id": "0003712",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003712.png",
+    "image_path_relative": "extra_images/0004000/0003712.png",
+    "true_types": [
+      "jpeg",
+      "noise"
+    ],
+    "pred_types": [
+      "gamma",
+      "jpeg",
+      "noise"
+    ],
+    "true_order": [
+      "jpeg",
+      "noise"
+    ],
+    "pred_order": [
+      "jpeg",
+      "noise",
+      "gamma"
+    ],
+    "ceiling_ssim": 0.8374549192489168,
+    "achieved_ssim": 0.3684487599126556,
+    "ssim_loss": 0.4690061593362612,
+    "output": "I find 3 distortions present: exposure shift, JPEG compression, Gaussian noise. Corruption order: exposure shift \u2192 Gaussian noise \u2192 JPEG compression. Restoration order (reverse): JPEG compression \u2192 Gaussian noise \u2192 exposure shift. This image shows 3 combined issues: mild JPEG compression (quality 60), very mild Gaussian noise (sigma\u224810), distinctly dark exposure shift (gamma\u22483.03). Restoration pipeline, in order: (1) fix the mild JPEG compression (quality 60) using 'bilateral_d3'; (2) address the very mild Gaussian noise (sigma\u224810) via 'bilateral_d21'; (3) fix the distinctly dark exposure shift (gamma\u22483.03) using 'lut'."
+  },
+  {
+    "id": "0003152_final_pair_jg_gj_412536",
+    "base_id": "0003152",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003152.png",
+    "image_path_relative": "extra_images/0004000/0003152.png",
+    "true_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "pred_types": [
+      "jpeg",
+      "noise"
+    ],
+    "true_order": [
+      "jpeg",
+      "gamma"
+    ],
+    "pred_order": [
+      "jpeg",
+      "noise"
+    ],
+    "ceiling_ssim": 0.9965304677845079,
+    "achieved_ssim": 0.5644433637983051,
+    "ssim_loss": 0.43208710398620287,
+    "output": "I can identify 2 distortions here: JPEG compression, Gaussian noise. Corruption order: Gaussian noise \u2192 JPEG compression. Restoration order (reverse): JPEG compression \u2192 Gaussian noise. This image shows 2 combined issues: noticeable JPEG compression (quality 40), light Gaussian noise (sigma\u224820). Fix these in this order: (1) apply 'bilateral_d3' to correct the noticeable JPEG compression (quality 40); (2) apply 'bilateral_d21' to correct the light Gaussian noise (sigma\u224820)."
+  },
+  {
+    "id": "0003795_final_pair_jg_jg_275512",
+    "base_id": "0003795",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003795.png",
+    "image_path_relative": "extra_images/0004000/0003795.png",
+    "true_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "pred_types": [
+      "gamma",
+      "jpeg",
+      "noise"
+    ],
+    "true_order": [
+      "gamma",
+      "jpeg"
+    ],
+    "pred_order": [
+      "gamma",
+      "jpeg",
+      "noise"
+    ],
+    "ceiling_ssim": 0.6844905245015952,
+    "achieved_ssim": 0.27272635794966643,
+    "ssim_loss": 0.41176416655192877,
+    "output": "I can identify 3 distortions here: exposure shift, JPEG compression, Gaussian noise. Corruption order: Gaussian noise \u2192 JPEG compression \u2192 exposure shift. Restoration order (reverse): exposure shift \u2192 JPEG compression \u2192 Gaussian noise. This image shows 3 combined issues: noticeably bright exposure shift (gamma\u22480.44), very severe JPEG compression (quality 1), very slight Gaussian noise (sigma\u224810). Recommended repair sequence: (1) address the noticeably bright exposure shift (gamma\u22480.44) via 'lut'; (2) address the very severe JPEG compression (quality 1) via 'bilateral_d9'; (3) apply 'bilateral_d21' to correct the very slight Gaussian noise (sigma\u224810)."
+  },
+  {
+    "id": "0003954_final_pair_jg_jg_315268",
+    "base_id": "0003954",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003954.png",
+    "image_path_relative": "extra_images/0004000/0003954.png",
+    "true_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "pred_types": [],
+    "true_order": [
+      "gamma",
+      "jpeg"
+    ],
+    "pred_order": [],
+    "ceiling_ssim": 0.9123450824369447,
+    "achieved_ssim": 0.503031634932119,
+    "ssim_loss": 0.4093134475048257,
+    "output": "This image has no distortions. No restoration needed."
+  },
+  {
+    "id": "0003157_final_pair_jg_jg_729679",
+    "base_id": "0003157",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003157.png",
+    "image_path_relative": "extra_images/0004000/0003157.png",
+    "true_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "pred_types": [
+      "gamma",
+      "jpeg"
+    ],
+    "true_order": [
+      "gamma",
+      "jpeg"
+    ],
+    "pred_order": [
+      "jpeg",
+      "gamma"
+    ],
+    "ceiling_ssim": 0.7238371846863322,
+    "achieved_ssim": 0.34145074874829123,
+    "ssim_loss": 0.38238643593804095,
+    "output": "I can identify 2 distortions here: exposure shift, JPEG compression. Corruption order: exposure shift \u2192 JPEG compression. Restoration order (reverse): JPEG compression \u2192 exposure shift. This image shows 2 combined issues: severe JPEG compression (quality 1), very bright exposure shift (gamma\u22480.25). Restoration pipeline, in order: (1) apply 'bilateral_d9' to correct the severe JPEG compression (quality 1); (2) address the very bright exposure shift (gamma\u22480.25) via 'lut'."
+  },
+  {
+    "id": "0003075_final_pair_jn_jn_53674",
+    "base_id": "0003075",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003075.png",
+    "image_path_relative": "extra_images/0004000/0003075.png",
+    "true_types": [
+      "jpeg",
+      "noise"
+    ],
+    "pred_types": [
+      "gamma",
+      "jpeg",
+      "noise"
+    ],
+    "true_order": [
+      "noise",
+      "jpeg"
+    ],
+    "pred_order": [
+      "noise",
+      "jpeg",
+      "gamma"
+    ],
+    "ceiling_ssim": 0.8396199108349904,
+    "achieved_ssim": 0.4593712736674099,
+    "ssim_loss": 0.38024863716758056,
+    "output": "I find 3 distortions present: exposure shift, JPEG compression, Gaussian noise. Corruption order: exposure shift \u2192 JPEG compression \u2192 Gaussian noise. Restoration order (reverse): Gaussian noise \u2192 JPEG compression \u2192 exposure shift. This image shows 3 combined issues: clearly visible Gaussian noise (sigma\u224850), light-to-moderate JPEG compression (quality 60), noticeably dark exposure shift (gamma\u22482.3). Fix these in this order: (1) apply 'median_k7' to correct the clearly visible Gaussian noise (sigma\u224850); (2) restore from the light-to-moderate JPEG compression (quality 60) with 'bilateral_d3'; (3) apply 'lut' to correct the noticeably dark exposure shift (gamma\u22482.3)."
+  },
+  {
+    "id": "0003894_final_pair_ng_ng_563038",
+    "base_id": "0003894",
+    "image_path": "/home/gramatchin/data/raw/extra_images/0004000/0003894.png",
+    "image_path_relative": "extra_images/0004000/0003894.png",
+    "true_types": [
+      "gamma",
+      "noise"
+    ],
+    "pred_types": [
+      "noise"
+    ],
+    "true_order": [
+      "gamma",
+      "noise"
+    ],
+    "pred_order": [
+      "noise"
+    ],
+    "ceiling_ssim": 0.9718147646622929,
+    "achieved_ssim": 0.604890599481244,
+    "ssim_loss": 0.36692416518104887,
+    "output": "I find 1 distortion present: Gaussian noise. This photo shows light-to-moderate Gaussian noise (sigma\u224840). Fix it using 'bilateral_d5'."
+  }
+]
