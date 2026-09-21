@@ -1,5 +1,7 @@
-"""
-Phase 6 evaluation. Identical parsing/metrics logic to
+"""Evaluates the model on the multi-distortion task.
+
+Parses each answer (detected types, restoration order, methods, values) and scores
+it against the ground truth stored in the manifest.
 """
 
 import argparse
@@ -33,7 +35,7 @@ GAMMA_METHODS = ["lut"]
 ALL_METHODS = sorted(set(JPEG_METHODS) | set(NOISE_METHODS) | set(GAMMA_METHODS), key=len, reverse=True)
 METHOD_RE = re.compile(r'\b(' + '|'.join(re.escape(m) for m in ALL_METHODS) + r')\b') # looking for a method
 
-# trying to parse the number next to gamma, noise, quality
+# numbers written next to quality / sigma / gamma
 QUALITY_RE = re.compile(r'quality\D{0,10}?(\d+)', re.IGNORECASE)
 SIGMA_RE = re.compile(r'sigma\D{0,10}?([0-9]*\.?[0-9]+)', re.IGNORECASE)
 GAMMA_RE = re.compile(r'gamma\D{0,5}?([0-9]*\.?[0-9]+)', re.IGNORECASE)
@@ -47,19 +49,19 @@ TYPE_RE_BY_TYPE = {
 
 PHRASE_TO_TYPE = {"JPEG compression": "jpeg", "Gaussian noise": "noise", "exposure shift": "gamma"}
 TYPE_PHRASE_ALT = "|".join(re.escape(p) for p in PHRASE_TO_TYPE)
-DETECTED_RE = re.compile(rf':\s*((?:{TYPE_PHRASE_ALT})(?:\s*,\s*(?:{TYPE_PHRASE_ALT}))*)\s*\.') #Detected distortions (N): jpeg, noise, gamma.
+DETECTED_RE = re.compile(rf':\s*((?:{TYPE_PHRASE_ALT})(?:\s*,\s*(?:{TYPE_PHRASE_ALT}))*)\s*\.') # e.g. Detected distortions (N): jpeg, noise, gamma.
 CHAIN_RE = re.compile(rf'(?:{TYPE_PHRASE_ALT})(?:\s*→\s*(?:{TYPE_PHRASE_ALT})){{1,2}}') # order X → Y → Z
 
-#cut everything after _ like bileteral_
+# family = name before the first underscore, e.g. bilateral_d3 -> bilateral
 def method_family(name):
     return name.split('_')[0] if name else None
 
-# [95,85,70,60,40,25,15,10,5,1] to index 0-9
+# jpeg qualities [95,85,...,1] and noise sigmas map to indices 0-9
 _JPEG_ORDER = sorted(JPEG_QUALITY, reverse=True)   # index 0 = mildest (highest quality)
 _NOISE_ORDER = sorted(NOISE_SIGMA)                  # index 0 = mildest (lowest sigma)
 
 
-# dark or bright 
+# gamma index: distance from 1.0 on its own side (darkening or brightening)
 def _gamma_sev_idx(g):
     darks = sorted(x for x in GAMMA if x > 1.0)
     brights = sorted((1.0 / x for x in GAMMA if x < 1.0))
@@ -67,7 +69,7 @@ def _gamma_sev_idx(g):
     ratio = g if g > 1.0 else 1.0 / g
     return min(range(len(side)), key=lambda i: abs(side[i] - ratio))
 
-# quality digit to closest from set
+# snaps a value to the nearest defined level and returns its index
 def severity_index(dtype, value):
     if dtype == "jpeg":
         return min(range(len(_JPEG_ORDER)), key=lambda i: abs(_JPEG_ORDER[i] - value))
@@ -77,15 +79,13 @@ def severity_index(dtype, value):
         return _gamma_sev_idx(value)
     raise ValueError(dtype)
 
-# distance between levels of distorion
+# distance in levels between predicted and true value
 def _value_index_distance(dtype, pred, true):
     if pred is None or (dtype == "gamma" and pred <= 0):
         return None
     return abs(severity_index(dtype, pred) - severity_index(dtype, true))
 
-# Pre-bound type-dispatch helpers to evaluate exact/off-by-1 severity prediction.
-# Avoids repetitive if/elif checks for different scale types (jpeg/noise/gamma).
-# Note: `t=t` prevents closure scope leaking; inner lambda avoids repeating distance call.
+# value is correct if it lands on the exact level / within one level (t=t binds the type)
 VALUE_CORRECT_BY_TYPE = {
     t: (lambda pred, true, t=t: (_value_index_distance(t, pred, true) == 0))
     for t in ("jpeg", "noise", "gamma")
@@ -95,7 +95,7 @@ VALUE_CORRECT_WITHIN1_BY_TYPE = {
     for t in ("jpeg", "noise", "gamma")
 }
 
-#If the model doesn't produce a clear "X → Y → Z" phrase, it searches for the character position (m.start()) where the word "jpeg"/"noise"/"gamma" first appears in the text and sorts by that position—that is, it assumes that the order of occurrence in the text is the order of recovery.
+# if there is no clear "X → Y → Z" chain, take the order in which the type words first appear
 def _order_of_appearance_fallback(text):
     type_hits = []
     for t, regex in TYPE_RE_BY_TYPE.items():
@@ -107,18 +107,15 @@ def _order_of_appearance_fallback(text):
 
 
 def parse_pipeline_answer(text):
-    ## 1. Parse detected distortions header ("Detected distortions (N): ...")
-    # Splits comma-separated human phrases and maps them to canonical types via PHRASE_TO_TYPE.
+    # detected types from the "Detected distortions (N): ..." line
     m = DETECTED_RE.search(text)
     pred_types_detected = None
     if m:
         phrases = [p.strip() for p in m.group(1).split(',')]
         pred_types_detected = [PHRASE_TO_TYPE[p] for p in phrases if p in PHRASE_TO_TYPE]
 
-    
-    # 2. Extract chain order ("A → B → C").
-    # The output usually contains two chains: Corruption order and Restoration order (reverse).
-    # Prefer chains[1] (restoration order); fallback to chains[0] if only one chain exists.
+
+    # order chains "A → B → C": normally two (corruption, then restoration), we want the second
     chains = CHAIN_RE.findall(text)
     pred_order = None
     if len(chains) >= 2:
@@ -126,25 +123,20 @@ def parse_pipeline_answer(text):
     elif len(chains) == 1:
         pred_order = [PHRASE_TO_TYPE[p.strip()] for p in chains[0].split('→') if p.strip() in PHRASE_TO_TYPE]
 
-
-    # 3. Fallbacks for malformed or non-standard model outputs:
-    # Use keyword appearance order if no chain was matched, and align detected types if missing.
+    # fallbacks when the answer is malformed
     if not pred_order:
         pred_order = _order_of_appearance_fallback(text)
     if not pred_types_detected:
         pred_types_detected = pred_order
 
-
-    # 4. Model self-consistency check:
-    # Verifies if types listed in "Detected distortions" match the types in the restoration order chain.
+    # does the "Detected distortions" line agree with the order chain?
     detected_order_agreement = set(pred_types_detected) == set(pred_order)
 
-    # 5. Extract mentioned methods ("bilateral_d3", "lut", etc.) and map them 1-to-1 to pred_order
-    # by position, assuming steps are listed in restoration order.
+    # methods are listed in restoration order, so match them to pred_order by position
     method_mentions = [m.group(1) for m in METHOD_RE.finditer(text)]
     pred_method_by_type = dict(zip(pred_order, method_mentions))
 
-    # 6. Extract numerical parameters (quality/sigma/gamma) using type-specific regexes.
+    # numeric values (quality / sigma / gamma)
     pred_value_by_type = {}
     for t, regex in VALUE_RE_BY_TYPE.items():
         m = regex.search(text)
@@ -153,11 +145,9 @@ def parse_pipeline_answer(text):
 
     return pred_order, pred_types_detected, pred_method_by_type, pred_value_by_type, detected_order_agreement
 
-# Applies synthetic distortions to a clean image based on entry["distortions"] from the manifest.
-# Mirrors the dataset corruption logic (`apply_distortions` in train.py):
-# - Uses corruption order (`corr_order`), NOT restoration order.
+# same on-the-fly corruption as apply_distortions() in train.py, in corruption order
 def corrupt_for_eval(image, entry):
-    sys.path.insert(0, "/nfsd/lttm4/tesisti/gramatchi")
+    sys.path.insert(0, os.environ.get("RESTORATION_COMMON_DIR", "/nfsd/lttm4/tesisti/gramatchi/training_release/common"))
     import zlib
     import numpy as np
     import cv2
@@ -176,11 +166,8 @@ def corrupt_for_eval(image, entry):
             image_np, _ = add_gamma_corruption(image_np, gamma=params["gamma"])
     return Image.fromarray(np.ascontiguousarray(image_np[:, :, ::-1]))
 
-# PyTorch Dataset for evaluation pipeline.
-# Formats prompt according to LLaVA conversation templates, applies corruption on-the-fly,
-# and prepares image tensors and tokenized input IDs.
+# builds the prompt, distorts the photo and prepares the model inputs
 class PipelineDataset(Dataset):
-    #saves that we send to the object
     def __init__(self, questions, image_folder, tokenizer, image_processor, model_config, conv_mode):
         self.questions = questions
         self.image_folder = image_folder
@@ -193,7 +180,6 @@ class PipelineDataset(Dataset):
         return len(self.questions)
 
     def __getitem__(self, index):
-        #question
         entry = self.questions[index]
         qs = entry["conversations"][0]["value"].replace(DEFAULT_IMAGE_TOKEN, "").strip()
         if self.model_config.mm_use_im_start_end:
@@ -212,8 +198,7 @@ class PipelineDataset(Dataset):
         input_ids = tokenizer_image_token(prompt, self.tokenizer, IMAGE_TOKEN_INDEX, return_tensors='pt')
         return input_ids, image_tensor, image.size
 
-# Custom collate function to batch data from Dataset.
-# Handles input tensor stacking for batch processing (typically executed with batch_size=1).
+# batch_size is 1 in practice
 def collate_fn(batch):
     input_ids, image_tensors, image_sizes = zip(*batch)
     input_ids = torch.stack(input_ids, dim=0)
@@ -231,8 +216,7 @@ def eval_model(args):
     if args.limit is not None:
         questions = questions[:args.limit]
 
-    # Resume mechanism: Skip already generated answers if the output file exists.
-    # Appends new results ("a") if resuming, or creates a new file ("w").
+    # resume: skip questions that are already in the answers file and append to it
     already_answered = []
     if os.path.exists(args.answers_file):
         with open(args.answers_file) as f:
@@ -249,8 +233,7 @@ def eval_model(args):
     ans_file = open(args.answers_file, "a" if n_done > 0 else "w")
 
     rows = list(already_answered)
-    
-    # Main evaluation loop over remaining dataset items:
+
     for (input_ids, image_tensor, image_sizes), entry in tqdm(zip(loader, questions_remaining), total=len(questions_remaining)):
         gt = entry["ground_truth"]
         true_types = set(gt["distortion_types"])
@@ -275,7 +258,7 @@ def eval_model(args):
         type_set_correct = pred_types == true_types
         order_correct = type_set_correct and pred_order == true_order
 
-        #only for truth pred
+        # scored only for the types that are actually present
         step_results = {}
         for t, step in true_steps.items():
             pred_method = pred_method_by_type.get(t)
@@ -325,11 +308,10 @@ def eval_model(args):
 
     def rate(lst):
         return sum(lst) / len(lst) if lst else None
-    
-    
-    # Final metric aggregation across all processed samples:
-    # Includes conditional metrics (e.g., order accuracy given correct type set)
-    # and breakdowns grouped by number of applied distortions (none / single / pair / triple).
+
+
+    # overall metrics, conditional ones (e.g. order given correct type set), and
+    # breakdowns by number of distortions (none / single / pair / triple)
     stats = {
         "model_path": args.model_path, "model_base": args.model_base, "n_total": n_total,
         "type_set_accuracy": n_type_correct / n_total if n_total else None,
